@@ -7,6 +7,8 @@ import WallMart from "../../../../public/icons/wallmart.svg";
 import Shopify from "../../../../public/icons/shopify.svg";
 import Clutch from "../../../../public/icons/clutch.svg";
 import Google from "../../../../public/icons/google.svg";
+import Hero1Img from "../../../../public/img/hero1.png";
+import Hero2Img from "../../../../public/img/hero2.png";
 import { ArrowUpRight, Star } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -171,6 +173,20 @@ const Hero = () => {
               initial={{ scale: 0.1, translateY: 200, opacity: 0 }}
               animate={{ scale: 1, opacity: 1, translateY: 64 }}
               className="bg-[#721A917D] w-[400px] h-[500px]  blur-[150px] flex"
+            />
+          </div>
+          <div className="max-w-[1340px] z-50 w-full  justify-between absolute hidden lg:flex">
+            <Image
+              width={260}
+              src={Hero1Img}
+              className="animated-hero"
+              alt="Ecommystery"
+            />
+            <Image
+              width={260}
+              className="entrance-shake"
+              src={Hero2Img}
+              alt="Ecommystery"
             />
           </div>
         </div>
