@@ -21,7 +21,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={` bg-bodyBg text-white ${plusJakarta.className} antialiased`}
+        data-new-gr-c-s-check-loaded="14.1232.0"
+        className={` bg-bodyBg overflow-x-hidden text-white ${plusJakarta.className} antialiased`}
       >
         {children}
       </body>
