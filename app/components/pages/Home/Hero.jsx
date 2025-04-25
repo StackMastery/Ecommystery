@@ -24,7 +24,7 @@ const Hero = () => {
 
   return (
     <>
-      <section className="section">
+      <section className="section z-10 relative">
         <div className="flex justify-center px-10 flex-col pt-52 py-40 items-center w-full max-w-[1440px]">
           <motion.div
             initial={{ opacity: 0, y: 80 }}
@@ -172,7 +172,7 @@ const Hero = () => {
             <motion.span
               initial={{ scale: 0.1, translateY: 200, opacity: 0 }}
               animate={{ scale: 1, opacity: 1, translateY: 64 }}
-              className="bg-[#721A917D] w-[400px] h-[500px]  blur-[150px] flex"
+              className="bg-[#721A917D] w-[400px] h-[500px] blur-[150px] z-10"
             />
           </div>
           <div className="max-w-[1340px] w-full  justify-between absolute hidden lg:flex">

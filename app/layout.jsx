@@ -25,14 +25,14 @@ export const viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  // Also supported but less commonly used
-  // interactiveWidget: 'resizes-visual',
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
+        data-new-gr-c-s-check-loaded="14.1233.0"
+        data-gr-ext-installed=""
         className={`bg-bodyBg overflow-x-hidden text-white [&::-webkit-scrollbar]:w-0 ${plusJakarta.className} antialiased`}
       >
         <TooltipProvider>

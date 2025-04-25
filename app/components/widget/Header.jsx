@@ -14,10 +14,13 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 import { gredTextClass } from "../pages/Home/Hero";
 import Hamburger from "hamburger-react";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [isMenuOff, setisMenuOff] = useState();
   const [scrolled, setScrolled] = useState(false);
+
+  const pathName = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,12 +57,14 @@ const Header = () => {
         </Link>
 
         <nav className="hidden lg:block">
-          <ul className="flex items-center gap-7 text-sm">
+          <ul className="flex items-center gap-4 text-sm">
             {HeaderData.navs.map((li, index) =>
               !li.childrens ? (
                 <li key={`navs-${index}`}>
                   <Link
-                    className="hover:text-neutral-400 transition-all duration-300"
+                    className={`hover:text-neutral-400 px-4 py-1 rounded-full transition-all duration-300 ${
+                      pathName === li.path && "bg-white/5"
+                    }`}
                     href={`${li?.path}`}
                   >
                     {li.element}
