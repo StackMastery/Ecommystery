@@ -197,7 +197,7 @@ const Hero = () => {
 
 export default Hero;
 
-const gredTextClass =
+export const gredTextClass =
   "bg-gradient-to-r from-[#226FFF] bg-clip-text via-[#DE22FF] pr-1 to-[#FFE11B] font-serif font-light italic text-transparent ";
 
 const tooltipVariants = {
