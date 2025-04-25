@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import AmazonIcon from "../../../../public/icons/amazon.svg";
 import WallMart from "../../../../public/icons/wallmart.svg";
@@ -28,7 +28,7 @@ const Hero = () => {
         <div className="flex justify-center px-10 flex-col pt-52 py-40 items-center w-full max-w-[1440px]">
           <motion.div
             initial={{ opacity: 0, y: 80 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{
               duration: 0.8,
               ease: [0.25, 0.1, 0.25, 1],
@@ -38,7 +38,7 @@ const Hero = () => {
             <div className="mb-6 w-full flex justify-center items-center flex-col gap-2">
               <motion.div
                 initial={{ translateY: -50, opacity: 0 }}
-                animate={{ translateY: 0, opacity: 100 }}
+                whileInView={{ translateY: 0, opacity: 100 }}
                 transition={{
                   delay: 0.6,
                   duration: 0.4,
@@ -49,7 +49,7 @@ const Hero = () => {
                   <div className="flex items-center -space-x-2 max-[450px]:scale-90">
                     <motion.span
                       initial={{ scale: 0 }}
-                      animate={{ scale: 0.9 }}
+                      whileInView={{ scale: 0.9 }}
                       transition={{
                         delay: 1,
                         duration: 0.4,
@@ -61,7 +61,7 @@ const Hero = () => {
                     </motion.span>
                     <motion.span
                       initial={{ translateX: -24, opacity: 0 }}
-                      animate={{ translateX: 0, opacity: 100 }}
+                      whileInView={{ translateX: 0, opacity: 100 }}
                       transition={{
                         delay: 1.4,
                         duration: 0.4,
@@ -150,7 +150,7 @@ const Hero = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <span className=" animate-pulse font-light">
+                <span className=" whileInView-pulse font-light">
                   Certified Amazon Partner
                 </span>
               </label>
@@ -166,13 +166,13 @@ const Hero = () => {
           <div className="max-w-[1440px] w-full flex justify-between absolute">
             <motion.span
               initial={{ scale: 0.3, translateY: -300, opacity: 0 }}
-              animate={{ scale: 1, translateY: -80, opacity: 1 }}
+              whileInView={{ scale: 1, translateY: -80, opacity: 1 }}
               className="bg-[#721A917D] w-[400px] h-[500px]  blur-[150px] flex"
             />
             <motion.span
               initial={{ scale: 0.1, translateY: 200, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1, translateY: 64 }}
-              className="bg-[#721A917D] w-[400px] h-[500px] blur-[150px] z-10"
+              whileInView={{ scale: 1, opacity: 1, translateY: 10 }}
+              className="bg-[#721A917D] w-[400px] h-[400px] blur-[150px] z-10"
             />
           </div>
           <div className="max-w-[1340px] w-full  justify-between absolute hidden lg:flex">
@@ -224,12 +224,12 @@ const IconButton = ({ size = 25, icon, alt }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <AnimatePresence>
+      <whileInViewPresence>
         {isHovered && (
           <motion.div
             className="absolute z-10 top-full mt-2 text-xs pointer-events-none flex flex-col items-center"
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
             exit="hidden"
             variants={tooltipVariants}
           >
@@ -239,7 +239,7 @@ const IconButton = ({ size = 25, icon, alt }) => {
             <div className="absolute inset-x-0 h-px w-1/2 mx-auto -top-px shadow-2xl bg-gradient-to-r from-transparent via-[#DE22FF] to-transparent blur-[1px]" />
           </motion.div>
         )}
-      </AnimatePresence>
+      </whileInViewPresence>
 
       <span className="bg-white h-12 w-12 p-2 border border-black flex justify-center items-center rounded-full">
         <Image width={size} src={icon} alt={alt} />

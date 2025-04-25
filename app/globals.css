@@ -220,7 +220,3 @@
     overflow-y: scroll;
   }
 }
-
-.rfm-overlay {
-  --gradient-color: black !important;
-}
