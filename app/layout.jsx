@@ -1,5 +1,7 @@
 import { Instrument_Serif, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import Header from "./components/widget/Header";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -22,9 +24,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         data-new-gr-c-s-check-loaded="14.1232.0"
-        className={` bg-bodyBg overflow-x-hidden text-white ${plusJakarta.className} antialiased`}
+        className={` bg-bodyBg overflow-x-hidden text-white [&::-webkit-scrollbar]:w-0 ${plusJakarta.className} antialiased`}
       >
-        {children}
+        <TooltipProvider>
+          <Header />
+          {children}
+        </TooltipProvider>
       </body>
     </html>
   );

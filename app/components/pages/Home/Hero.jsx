@@ -25,7 +25,7 @@ const Hero = () => {
   return (
     <>
       <section className="section">
-        <div className="flex justify-center px-10 flex-col py-40 items-center w-full max-w-[1440px]">
+        <div className="flex justify-center px-10 flex-col pt-52 py-40 items-center w-full max-w-[1440px]">
           <motion.div
             initial={{ opacity: 0, y: 80 }}
             animate={{ opacity: 1, y: 0 }}
@@ -33,7 +33,7 @@ const Hero = () => {
               duration: 0.8,
               ease: [0.25, 0.1, 0.25, 1],
             }}
-            className="max-w-[580px] z-50 text-center"
+            className="max-w-[580px]  relative z-[999] text-center"
           >
             <div className="mb-6 w-full flex justify-center items-center flex-col gap-2">
               <motion.div
@@ -103,7 +103,7 @@ const Hero = () => {
                 Leading E-commerce Agency
               </motion.h3>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold">
+            <h2 className="text-4xl md:text-5xl font-bold z-[9999] relative">
               Your <span className={` ${gredTextClass}`}>E-Commerce</span>{" "}
               Success{" "}
               <span className="flex text-center items-center gap-2 justify-center mt-3 max-[350px]:scale-90 max-[300px]:-mt-[1px] max-[300px]:scale-75">
@@ -175,7 +175,7 @@ const Hero = () => {
               className="bg-[#721A917D] w-[400px] h-[500px]  blur-[150px] flex"
             />
           </div>
-          <div className="max-w-[1340px] z-50 w-full  justify-between absolute hidden lg:flex">
+          <div className="max-w-[1340px] w-full  justify-between absolute hidden lg:flex">
             <Image
               width={260}
               src={Hero1Img}
