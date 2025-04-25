@@ -29,31 +29,37 @@ const ServiceCards = async () => {
           return (
             <CardContainer
               key={service.title}
-              className="!z-30 relative col-span-12 w-full"
+              className="!z-30  col-span-12 w-full"
             >
               <div
                 className={`cardS bg-gradient-to-r flex flex-col cursor-pointer to-white w-full h-full rounded-2xl text-black ${gradientFrom} p-8 z-30 relative ${service.className}`}
               >
                 <div className="flex w-full justify-between">
-                  <h3 className="text-xl font-medium">{service.type}</h3>
+                  <h3 className="text-lg sm:text-xl font-medium">
+                    {service.type}
+                  </h3>
                   <CardItem>
                     <div
-                      className={`h-16 w-16 to-white rounded-full flex justify-center items-center p-3 ${
+                      className={`h-16 w-16 to-white scale-90 md:scale-100 rounded-full flex justify-center items-center p-3 ${
                         bgTo || ""
                       } `}
                     >
                       <Image
-                        width={60}
-                        height={60}
+                        width={50}
+                        height={50}
                         src={service.icon}
                         alt={service.title}
                       />
                     </div>
                   </CardItem>
                 </div>
-                <div className="pt-5">
-                  <h2 className="text-[28px] font-semibold">{service.title}</h2>
-                  <p className="pt-5 w-10/12">{service.description}</p>
+                <div className="pt-2 md:pt-5">
+                  <h2 className="text-[22px] md:text-[28px] font-semibold">
+                    {service.title}
+                  </h2>
+                  <p className="text-sm md:text-base pt-5 w-10/12">
+                    {service.description}
+                  </p>
                   <CardItem>
                     <Link
                       href={`/${service.type

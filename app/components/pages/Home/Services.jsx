@@ -19,8 +19,8 @@ const Services = () => {
               <ServiceCards />
             </Suspense>
           </div>
-          <Link href={"/services"}>
-            <button className="flex hover:bg-white/20 transition-all hover:text-white !font-semibold bg-white z-50 relative cursor-pointer mt-10 px-10 py-3 rounded-full text-[#684271]">
+          <Link className="flex w-full md:w-fit" href={"/services"}>
+            <button className="flex w-full justify-center  hover:bg-white/20 transition-all hover:text-white !font-semibold bg-white z-50 relative cursor-pointer mt-10 px-10 py-4 rounded-full text-[#684271]">
               VIEW ALL SERVICES <ArrowUpRight />
             </button>
           </Link>

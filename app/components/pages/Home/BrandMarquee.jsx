@@ -19,7 +19,7 @@ const BrandMarquee = () => {
       >
         <h2 className="mb-5 font-medium text-lg">Trusted by top brands</h2>
         <div className="max-w-[1040px] w-full gap-2 flex items-center flex-col justify-center">
-          <Marquee gradient gradientColor="black">
+          <Marquee gradientColor="black">
             {BrandMarqueeData.map((brand, index) => (
               <div className="flex items-center ">
                 <Image
@@ -41,7 +41,7 @@ const BrandMarquee = () => {
               </div>
             ))}{" "}
           </Marquee>
-          <Marquee gradient gradientColor="black" direction="right">
+          <Marquee gradientColor="black" direction="right">
             {BrandMarqueeData.map((brand, index) => (
               <div className="flex items-center ">
                 <Image

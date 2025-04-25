@@ -6,7 +6,7 @@ import tagIcon from "../../public/icons/tag.svg";
 import shopIcon from "../../public/icons/shop.svg";
 
 export const getAllServicesCardData = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 500)); // ⏳ 1.5s delay
+  await new Promise((resolve) => setTimeout(resolve, 5)); // ⏳ 1.5s delay
 
   return {
     services: [
