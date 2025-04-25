@@ -16,7 +16,7 @@ import { gredTextClass } from "../pages/Home/Hero";
 import Hamburger from "hamburger-react";
 
 const Header = () => {
-  const [isMenuOff, setisMenuOff] = useState(false);
+  const [isMenuOff, setisMenuOff] = useState();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -111,9 +111,9 @@ const Header = () => {
             <Hamburger
               onToggle={(toggled) => {
                 if (toggled) {
-                  setisMenuOff(false);
-                } else {
                   setisMenuOff(true);
+                } else {
+                  setisMenuOff(false);
                 }
               }}
               size={30}
@@ -137,7 +137,7 @@ const Header = () => {
       <div className="flex  w-full max-w-[1240px] justify-center lg:hidden">
         <div className="w-full fixed left-0 px-5">
           <AnimatePresence>
-            {!isMenuOff && (
+            {isMenuOff && (
               <motion.div
                 initial={{ y: 150, opacity: 0, filter: "blur(10px)" }}
                 animate={{ y: 0, opacity: 1, filter: "blur(0px)" }} // Note: opacity should be between 0 and 1
