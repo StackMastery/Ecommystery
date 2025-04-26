@@ -216,7 +216,7 @@
 
 @media (max-height: 780px) {
   #menuMobile {
-    height: 70vh;
+    height: 75vh;
     overflow-y: scroll;
   }
 }

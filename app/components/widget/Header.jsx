@@ -20,6 +20,7 @@ import Image from "next/image";
 const Header = () => {
   const [isMenuOff, setisMenuOff] = useState();
   const [scrolled, setScrolled] = useState(false);
+  const [servicesCollaps, setservicesCollaps] = useState(true);
 
   const pathName = usePathname();
 
@@ -170,7 +171,10 @@ const Header = () => {
                   duration: 0.3,
                 }}
                 id="menuMobile"
-                className="flex w-full flex-col [&::-webkit-scrollbar]:w-0  backdrop-blur-md border bg-[#de22ff04] border-white/5 p-10 rounded-md mt-5"
+                className={`flex w-full  flex-col [&::-webkit-scrollbar]:w-0  backdrop-blur-md border bg-[#de22ff04] border-white/5 p-10 rounded-md mt-5 ${
+                  !servicesCollaps &&
+                  "max-[600px]:overflow-scroll max-[600px]:h-[85vh]"
+                }`}
               >
                 <ul className="flex flex-col gap-7 text-sm">
                   {HeaderData.navs.map((li, index) =>
@@ -185,40 +189,44 @@ const Header = () => {
                       </li>
                     ) : (
                       <React.Fragment key={`navs-${index}`}>
-                        <li className=" cursor-pointer flex gap-1 items-center group hover:text-neutral-400 transition-all duration-300">
+                        <button
+                          onClick={() => setservicesCollaps(!servicesCollaps)}
+                          className=" cursor-pointer flex gap-1 items-center group hover:text-neutral-400 transition-all duration-300"
+                        >
                           {li.element} -
-                        </li>
-
-                        <div className=" grid max-[550px]:grid-cols-1 grid-cols-2 min-[720px]:grid-cols-3 gap-5 text-xs backdrop-blur-3xl bg-pM/10 border -my-3 p-5 gap-x-10 border-white/5 rounded-md ">
-                          {li.childrens.map((childNav, index) => (
-                            <Link
-                              key={`servieces-${index}`}
-                              className="flex gap-3 group items-center"
-                              href={"/services"}
-                            >
-                              <span
-                                className={`to-white p-2 flex justify-center h-8 w-8 scale-90 rounded-full ${childNav.className}`}
+                        </button>
+                        {!servicesCollaps && (
+                          <div className=" grid max-[550px]:grid-cols-1 grid-cols-2 min-[720px]:grid-cols-3 gap-5 text-xs backdrop-blur-3xl bg-pM/10 border -my-3 p-5 gap-x-10 border-white/5 rounded-md ">
+                            {li.childrens.map((childNav, index) => (
+                              <Link
+                                key={`servieces-${index}`}
+                                className="flex gap-3 group items-center"
+                                href={"/services"}
                               >
-                                <Image
-                                  width={20}
-                                  src={childNav.icon}
-                                  alt={childNav.element}
-                                />
-                              </span>
-                              <div>
-                                <h4 className="text-[#B3B3B3] text-[8px]">
-                                  {childNav.type}
-                                </h4>
-                                <h2
-                                  className={`bg-clip-text from-pB via-pM to-pY bg-gradient-to-r transition-all group-hover:text-transparent`}
+                                <span
+                                  className={`to-white p-2 flex justify-center h-8 w-8 scale-90 rounded-full ${childNav.className}`}
                                 >
-                                  {childNav.element}
-                                </h2>
-                              </div>
-                            </Link>
-                          ))}
-                          <div className="absolute inset-x-0 h-px w-1/2 mx-auto -top-px shadow-2xl  bg-gradient-to-r from-transparent via-pM to-transparent" />
-                        </div>
+                                  <Image
+                                    width={20}
+                                    src={childNav.icon}
+                                    alt={childNav.element}
+                                  />
+                                </span>
+                                <div>
+                                  <h4 className="text-[#B3B3B3] text-[8px]">
+                                    {childNav.type}
+                                  </h4>
+                                  <h2
+                                    className={`bg-clip-text from-pB via-pM to-pY bg-gradient-to-r transition-all group-hover:text-transparent`}
+                                  >
+                                    {childNav.element}
+                                  </h2>
+                                </div>
+                              </Link>
+                            ))}
+                            <div className="absolute inset-x-0 h-px w-1/2 mx-auto -top-px shadow-2xl  bg-gradient-to-r from-transparent via-pM to-transparent" />
+                          </div>
+                        )}
                       </React.Fragment>
                     )
                   )}
