@@ -28,7 +28,7 @@ export const CompanyValueCard = ({ values, value, index }) => {
       whileInView={{ y: 0, opacity: 100, filter: "blur(0px)" }}
       transition={{
         type: "tween",
-        duration: 0.8 + index * 0.1, // ← duration increases by index
+        duration: 0.8, // ← duration increases by index
         stiffness: 300,
         damping: 20,
       }}
@@ -40,7 +40,7 @@ export const CompanyValueCard = ({ values, value, index }) => {
       }`}
     >
       <div className="from-white to-[#DCC3FF] bg-gradient-to-b h-14 w-14 rounded-full flex justify-center items-center">
-        <Image src={value.icon} alt={value.title} />
+        <Image width={30} height={30} src={value.icon} alt={value.title} />
       </div>
       <h3 className="text-white text-2xl sm:text-3xl font-medium">
         {value.title}
@@ -78,8 +78,6 @@ export const CompanyValuesImageTitleDes = () => {
 
       <div className="flex-1 flex mt-10">
         <Image
-          width={50}
-          height={50}
           placeholder="blur"
           className="w-full h-full object-cover rounded-2xl hidden lg:block"
           src={BuinessImg}

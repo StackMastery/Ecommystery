@@ -15,6 +15,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { gredTextClass } from "../pages/Home/Hero";
 import Hamburger from "hamburger-react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const Header = () => {
   const [isMenuOff, setisMenuOff] = useState();
@@ -84,23 +85,38 @@ const Header = () => {
                       </li>
                     </TooltipTrigger>
                     <TooltipContent
-                      className={`w-40 bg-transparent backdrop-blur-md border py-2 border-white/5 mt-3`}
+                      className={`w-[700px]  backdrop-blur-2xl border bg-white/5 py-2 border-white/10 mt-8 hidden lg:block`}
                     >
-                      <ol className=" flex flex-col text-xs ">
-                        {li.childrens.map((cLi, index) => (
-                          <li key={`childLi-${index}`}>
-                            <Link
-                              className="flex gap-2 font-light items-center hover:text-neutral-400 transition-all duration-300"
-                              href={cLi.path}
+                      <div className="grid grid-cols-3 p-5 gap-8">
+                        {li.childrens.map((childNav, index) => (
+                          <Link
+                            key={`servieces-${index}`}
+                            className="flex gap-3 group items-center"
+                            href={"/services"}
+                          >
+                            <span
+                              className={`to-white p-2 flex justify-center h-8 w-8 rounded-full ${childNav.className}`}
                             >
-                              {/* prettier-ignore */}
-                              <span className={`${gredTextClass} text-lg`}>{index + 1}. {" "}</span>{" "}
-                              {cLi.element}
-                            </Link>
-                          </li>
+                              <Image
+                                width={30}
+                                src={childNav.icon}
+                                alt={childNav.element}
+                              />
+                            </span>
+                            <div>
+                              <h4 className="text-[#B3B3B3] text-[9px] mb-1">
+                                {childNav.type}
+                              </h4>
+                              <h2
+                                className={`bg-clip-text from-pB via-pM to-pY bg-gradient-to-r transition-all group-hover:text-transparent`}
+                              >
+                                {childNav.element}
+                              </h2>
+                            </div>
+                          </Link>
                         ))}
-                      </ol>
-                      <div className="absolute inset-x-0 h-px w-1/2 mx-auto -top-px shadow-2xl  bg-gradient-to-r from-transparent via-pM to-transparent" />
+                      </div>
+                      <div className="absolute inset-x-0 h-px w-1/2 mx-auto -top-px blur-sm shadow-2xl  bg-gradient-to-r from-transparent via-pM to-transparent" />
                     </TooltipContent>
                   </Tooltip>
                 </React.Fragment>
@@ -145,7 +161,7 @@ const Header = () => {
             {isMenuOff && (
               <motion.div
                 initial={{ y: 150, opacity: 0, filter: "blur(10px)" }}
-                animate={{ y: 0, opacity: 1, filter: "blur(0px)" }} // Note: opacity should be between 0 and 1
+                animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
                 exit={{ y: 150, opacity: 0, filter: "blur(10px)" }}
                 transition={{
                   type: "tween",
@@ -173,21 +189,36 @@ const Header = () => {
                           {li.element} -
                         </li>
 
-                        <ol className=" flex flex-col text-xs backdrop-blur-3xl border -my-3 p-2 border-white/5 rounded-md ">
-                          {li.childrens.map((cLi, index) => (
-                            <li key={`childLi-${index}`}>
-                              <Link
-                                className="flex gap-2 font-light items-center hover:text-neutral-400 transition-all duration-300"
-                                href={cLi.path}
+                        <div className=" grid max-[550px]:grid-cols-1 grid-cols-2 min-[720px]:grid-cols-3 gap-5 text-xs backdrop-blur-3xl bg-pM/10 border -my-3 p-5 gap-x-10 border-white/5 rounded-md ">
+                          {li.childrens.map((childNav, index) => (
+                            <Link
+                              key={`servieces-${index}`}
+                              className="flex gap-3 group items-center"
+                              href={"/services"}
+                            >
+                              <span
+                                className={`to-white p-2 flex justify-center h-8 w-8 scale-90 rounded-full ${childNav.className}`}
                               >
-                                {/* prettier-ignore */}
-                                <span className={`${gredTextClass} text-lg`}>{index + 1}. {" "}</span>{" "}
-                                {cLi.element}
-                              </Link>
-                            </li>
+                                <Image
+                                  width={20}
+                                  src={childNav.icon}
+                                  alt={childNav.element}
+                                />
+                              </span>
+                              <div>
+                                <h4 className="text-[#B3B3B3] text-[8px]">
+                                  {childNav.type}
+                                </h4>
+                                <h2
+                                  className={`bg-clip-text from-pB via-pM to-pY bg-gradient-to-r transition-all group-hover:text-transparent`}
+                                >
+                                  {childNav.element}
+                                </h2>
+                              </div>
+                            </Link>
                           ))}
                           <div className="absolute inset-x-0 h-px w-1/2 mx-auto -top-px shadow-2xl  bg-gradient-to-r from-transparent via-pM to-transparent" />
-                        </ol>
+                        </div>
                       </React.Fragment>
                     )
                   )}

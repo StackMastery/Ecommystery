@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "./components/widget/Header";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Viewport } from "next";
+import Footer from "./components/widget/Footer";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -38,6 +39,7 @@ export default function RootLayout({ children }) {
         <TooltipProvider>
           <Header />
           {children}
+          <Footer />
         </TooltipProvider>
       </body>
     </html>
