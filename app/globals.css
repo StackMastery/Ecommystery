@@ -15,6 +15,7 @@
 
 @theme {
   --font-serif: Instrument Serif, Instrument Serif Fallback;
+  --font-familyN: Plus Jakarta Sans, Plus Jakarta Sans Fallback;
   --color-bodyBg: #0f0d11;
   --color-pM: #de22ff;
   --color-pB: #226fff;

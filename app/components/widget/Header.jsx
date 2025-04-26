@@ -86,7 +86,7 @@ const Header = () => {
                       </li>
                     </TooltipTrigger>
                     <TooltipContent
-                      className={`w-[700px]  backdrop-blur-2xl border bg-white/5 py-2 border-white/10 mt-8 hidden lg:block`}
+                      className={`w-[900px]  backdrop-blur-2xl rounded-2xl border bg-white/5 py-2 border-white/10 mt-8 hidden lg:block`}
                     >
                       <div className="grid grid-cols-3 p-5 gap-8">
                         {li.childrens.map((childNav, index) => (
@@ -96,7 +96,7 @@ const Header = () => {
                             href={"/services"}
                           >
                             <span
-                              className={`to-white p-2 flex justify-center h-8 w-8 rounded-full ${childNav.className}`}
+                              className={`to-white p-2 flex justify-center h-9 w-9 rounded-full ${childNav.className}`}
                             >
                               <Image
                                 width={30}
@@ -105,11 +105,11 @@ const Header = () => {
                               />
                             </span>
                             <div>
-                              <h4 className="text-[#B3B3B3] text-[9px] mb-1">
+                              <h4 className="text-[#B3B3B3] text-[12px] mt-1">
                                 {childNav.type}
                               </h4>
                               <h2
-                                className={`bg-clip-text from-pB via-pM to-pY bg-gradient-to-r transition-all group-hover:text-transparent`}
+                                className={`bg-clip-text text-[16px] from-pB via-pM to-pY bg-gradient-to-r transition-all group-hover:text-transparent`}
                               >
                                 {childNav.element}
                               </h2>
