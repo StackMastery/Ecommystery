@@ -2,13 +2,24 @@
 import Image from "next/image";
 import ManImg from "../../../../public/img/man.png";
 import { NumberTicker } from "@/components/magicui/number-ticker";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
     <>
       <section className="section pb-20">
         <div className="max-w-[1440px] flex-col lg:flex-row w-full flex justify-between px-5 gap-10 items-center">
-          <div className="w-full lg:w-7/12 space-y-10 lg:pr-5">
+          <motion.div
+            initial={{ opacity: 0, x: -100, filter: "blur(10px)" }}
+            whileInView={{ opacity: 100, x: 0, filter: "blur(0px)" }}
+            transition={{
+              type: "tween",
+              duration: 0.8,
+              stiffness: 300,
+              damping: 20,
+            }}
+            className="w-full lg:w-7/12 space-y-10 lg:pr-5"
+          >
             <h2 className="text-4xl md:text-5xl font-semibold  lg:w-8/12">
               <span className="text-transparent bg-gradient-to-r via-pM from-pB to-pY bg-clip-text">
                 Helping
@@ -26,8 +37,18 @@ const About = () => {
               that make success simple for entrepreneurs and busy professionals.
             </p>
             <StatsSection className="md:hidden lg:flex" />
-          </div>
-          <div className="w-full lg:w-5/12 flex gap-5 items-center">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 100, filter: "blur(10px)" }}
+            whileInView={{ opacity: 100, x: 0, filter: "blur(0px)" }}
+            transition={{
+              type: "tween",
+              duration: 0.8,
+              stiffness: 300,
+              damping: 20,
+            }}
+            className="w-full lg:w-5/12 flex gap-5 items-center"
+          >
             <StatsSection className="hidden md:flex lg:hidden w-[1000px]" />
             <Image
               className="w-full rounded-2xl"
@@ -35,7 +56,7 @@ const About = () => {
               src={ManImg}
               alt="Man"
             />
-          </div>
+          </motion.div>
         </div>
       </section>
     </>
