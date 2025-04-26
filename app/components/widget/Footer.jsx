@@ -252,7 +252,7 @@ const Footer = () => {
                 </linearGradient>
               </defs>
             </svg>
-            <p className="text-[14px] font-light">
+            <p className="text-[14px] font-light text-current/50">
               This product focuses on providing organizations with tools to
               achieve financial transparency. It might include features for
               budgeting, expense tracking, financial reporting, and analytics to
