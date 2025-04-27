@@ -23,7 +23,9 @@ function Button({
       <SVGGredient className="absolute transition-all group-hover:blur-md group-hover:scale-150 group-hover:rotate-45 inset-0 z-0 h-52" />
 
       {/* Button Content */}
-      <span className="z-10 flex items-center gap-1">{children}</span>
+      <span className="z-10 flex items-center gap-1 justify-center w-full">
+        {children}
+      </span>
     </button>
   );
 }
