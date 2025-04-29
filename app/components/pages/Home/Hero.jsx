@@ -215,7 +215,7 @@ const tooltipVariants = {
   },
 };
 
-const IconButton = ({ size = 25, icon, alt }) => {
+export const IconButton = ({ size = 25, icon, alt }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (

@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
 const Contact = () => {
   return (
     <>
-      <section className="section">
+      <section className="section relative !z-[9999]">
         <motion.div
           initial={{ y: 100, opacity: 0, filter: "blur(10px)" }}
           whileInView={{ y: 0, opacity: 100, filter: "blur(0px)" }}
@@ -24,7 +24,7 @@ const Contact = () => {
             stiffness: 300,
             damping: 20,
           }}
-          className="max-w-[1440px] w-full flex-col px-5 gap-10 flex lg:flex-row pt-20 pb-40"
+          className="max-w-[1240px] w-full flex-col px-5 gap-10 flex lg:flex-row pt-20 pb-40"
         >
           <div className="w-full overflow-hidden lg:w-6/12 bg-gradient-to-b from-[#121212] to-[#222222] p-10 md:p-20 rounded-4xl">
             <h2 className="bg-gradient-to-r text-5xl pr-1 font-semibold w-fit from-pB via-pM to-pY bg-clip-text text-transparent">
