@@ -23,14 +23,14 @@ const NewsLetter = () => {
             stiffness: 300,
             damping: 20,
           }}
-          className="max-w-[1440px] gap-5 flex text-center  px-5 flex-col items-center w-full py-20"
+          className="max-w-[1440px] relative !z-[999999] gap-5 flex text-center  px-5 flex-col items-center w-full py-20"
         >
-          <div className="flex flex-wrap  justify-center  -space-x-6 sm:-space-x-10">
+          <div className="flex flex-wrap  justify-center -space-y-20 -space-x-6 sm:-space-x-10">
             {members.map((mem, index) => (
               <div
                 style={{ background: `${colors[index]}` }}
                 key={`mem-${index}`}
-                className="rounded-full overflow-hidden md:h-32 md:w-32  w-18  h-18  sm:h-24  s:w-24"
+                className="rounded-full overflow-hidden md:h-32 md:w-32  w-18  h-18  sm:h-24  sm:w-24"
               >
                 <Image width={130} src={mem} alt="mem" />
               </div>

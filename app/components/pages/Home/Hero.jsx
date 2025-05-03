@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button";
 const Hero = () => {
   const ScrollToBottom = () => {
     window.scrollTo({
-      top: 500, // vertical position in pixels
+      top: 500,
       left: 0, // horizontal position (optional)
       behavior: "smooth", // smooth scroll animation
     });

@@ -76,14 +76,19 @@ const Header = () => {
                 <React.Fragment key={`navs-${index}`}>
                   <Tooltip>
                     <TooltipTrigger>
-                      <li className=" cursor-pointer flex gap-1 items-center group hover:text-neutral-400 transition-all duration-300">
-                        {li.element}{" "}
+                      <Link
+                        className={`hover:text-neutral-400 flex items-center gap-2 group px-4 py-1 rounded-full transition-all duration-300 ${
+                          pathName === li.path && "bg-white/5"
+                        }`}
+                        href={`${li?.path}`}
+                      >
+                        {li.element}
                         <ChevronDown
                           strokeWidth={1.2}
                           className="-mb-1 group-hover:rotate-180 transition-all"
                           size={20}
                         />{" "}
-                      </li>
+                      </Link>
                     </TooltipTrigger>
                     <TooltipContent
                       className={`w-[900px]  backdrop-blur-2xl rounded-2xl border bg-white/5 py-2 border-white/10 mt-8 hidden lg:block`}

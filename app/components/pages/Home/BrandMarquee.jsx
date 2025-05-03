@@ -3,7 +3,7 @@ import { BrandMarqueeData } from "@/lib/data/BrandMarqueeData";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
-const BrandMarquee = () => {
+const BrandMarquee = ({ gred = true }) => {
   return (
     <>
       <motion.section
@@ -19,7 +19,7 @@ const BrandMarquee = () => {
       >
         <h2 className="mb-5 font-medium text-lg">Trusted by top brands</h2>
         <div className="max-w-[1040px] w-full gap-2 flex items-center flex-col justify-center">
-          <Marquee gradientColor="black">
+          <Marquee gradient={gred} gradientColor="black">
             {BrandMarqueeData.map((brand, index) => (
               <div className="flex items-center ">
                 <Image
@@ -41,7 +41,7 @@ const BrandMarquee = () => {
               </div>
             ))}{" "}
           </Marquee>
-          <Marquee gradientColor="black" direction="right">
+          <Marquee gradient={gred} gradientColor="black" direction="right">
             {BrandMarqueeData.map((brand, index) => (
               <div className="flex items-center ">
                 <Image
