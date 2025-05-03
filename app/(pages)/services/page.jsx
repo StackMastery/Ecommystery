@@ -66,6 +66,11 @@ const ServicesPage = () => {
             whileInView={{ scale: 1, translateY: -80, opacity: 1 }}
             className="bg-[#41013C] w-[500px] h-[700px] mt-20  blur-[200px] flex"
           />
+          <motion.span
+            initial={{ scale: 0.3, translateY: -300, opacity: 0 }}
+            whileInView={{ scale: 1, translateY: -80, opacity: 1 }}
+            className="bg-[#0e0141] w-[500px] h-[700px] mt-20  blur-[200px] flex"
+          />
         </div>
       </div>
     </>

@@ -19,7 +19,7 @@ const NewsLetter = () => {
           whileInView={{ y: 0, opacity: 100, filter: "blur(0px)" }}
           transition={{
             type: "tween",
-            duration: 0.8, // ← duration increases by index
+            duration: 0.8,
             stiffness: 300,
             damping: 20,
           }}
@@ -81,6 +81,7 @@ const NewsLetter = () => {
             className={`flex flex-col sm:flex-row items-center w-full sm:max-w-[500px] sm:rounded-full overflow-hidden gap-2 sm:gap-0 sm:h-12`}
           >
             <input
+              type="email"
               placeholder="Ex: info@yourmail.com"
               className=" outline-0 h-12 py-[10px] bg-white rounded-full sm:rounded-r-none w-full px-5 placeholder:text-[#2C2731] placeholder:text-sm text-sm placeholder:font-medium text-[#2C2731]"
             />

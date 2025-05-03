@@ -121,6 +121,18 @@ const Header = () => {
                             </div>
                           </Link>
                         ))}
+                        <Link
+                          className="flex gap-3 bg-white/5 border justify-center border-white/10 rounded-md group items-center"
+                          href={"/services"}
+                        >
+                          <div>
+                            <h2
+                              className={`bg-clip-text text-[16px] from-pB via-pM to-pY bg-gradient-to-r transition-all group-hover:text-transparent`}
+                            >
+                              See All Services
+                            </h2>
+                          </div>
+                        </Link>
                       </div>
                       <div className="absolute inset-x-0 h-px w-1/2 mx-auto -top-px blur-sm shadow-2xl  bg-gradient-to-r from-transparent via-pM to-transparent" />
                     </TooltipContent>
