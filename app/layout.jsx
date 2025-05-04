@@ -2,7 +2,6 @@ import { Instrument_Serif, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "./components/widget/Header";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Viewport } from "next";
 import Footer from "./components/widget/Footer";
 
 const plusJakarta = Plus_Jakarta_Sans({
