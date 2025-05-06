@@ -1,3 +1,5 @@
+"use server";
+
 import { client } from "@/lib/sanity";
 
 export const teamMembersData = async () => {
@@ -8,7 +10,8 @@ export const teamMembersData = async () => {
     "image": image.asset->url
   }`;
 
-  const data = await client.fetch(query);
+  // Set cache revalidation to 60 seconds
+  const data = await client.fetch(query, {}, { next: { revalidate: 10 } });
 
   const team = data.map((member) => ({
     name: member.name.split(" "),
