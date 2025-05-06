@@ -43,7 +43,7 @@ function SelectContent({ className, children, position = "popper", ...props }) {
       <SelectPrimitive.Content
         data-slot="select-content"
         className={cn(
-          "bg-[#191919]/50 backdrop-blur-md px-0 rounded-xl mt-2",
+          "bg-[#191919]/50 backdrop-blur-md px-0 rounded-xl mt-2 z-[99999]",
           position === "popper" &&
             "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
           className

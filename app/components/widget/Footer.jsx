@@ -1,10 +1,18 @@
+"use client";
+
 import Link from "next/link";
 import Logo from "../ui/Logo";
 import { HeaderData } from "@/lib/data/HeaderData";
-import { gredTextClass } from "../pages/Home/Hero";
 import NewsletterSubscribe from "../ui/NewsletterSubscribe";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
+  const pathName = usePathname();
+
+  if (pathName.startsWith("/eadmin")) {
+    return;
+  }
+
   return (
     <>
       <footer className="section z-50 relative overflow-hidden">

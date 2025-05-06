@@ -12,7 +12,6 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { AnimatePresence, motion } from "framer-motion";
-import { gredTextClass } from "../pages/Home/Hero";
 import Hamburger from "hamburger-react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -32,6 +31,10 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (pathName.startsWith("/eadmin")) {
+    return;
+  }
 
   return (
     <motion.header
