@@ -1,6 +1,8 @@
 import { teamMembersData } from "@/controllers/frontend/team.controller";
 import { TeamMemberCard } from "./TeamClient";
 
+export const revalidate = 10;
+
 const TeamServer = async () => {
   const teamMembers = await teamMembersData();
 

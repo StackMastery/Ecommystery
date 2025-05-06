@@ -10,9 +10,8 @@ export const teamMembersData = async () => {
 
   const data = await client.fetch(query);
 
-  // Optional: if you want to split full names into arrays
   const team = data.map((member) => ({
-    name: member.name.split(" "), // converts "ASHIQUR Rahaman" to ["ASHIQUR", "Rahaman"]
+    name: member.name.split(" "),
     linkedIn: member.linkedIn,
     hobby: member.hobby,
     image: member.image,
