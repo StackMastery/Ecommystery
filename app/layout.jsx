@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        data-new-gr-c-s-check-loaded="14.1233.0"
+        data-new-gr-c-s-check-loaded="14.1234.0"
         data-gr-ext-installed=""
         className={`bg-bodyBg overflow-x-hidden text-white [&::-webkit-scrollbar]:w-0 ${plusJakarta.className} antialiased`}
       >

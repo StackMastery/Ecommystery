@@ -90,7 +90,7 @@ const AboutHero = () => {
               />
             </div>
 
-            <div className="flex flex-col gap-3 items-center max-[768px]:static max-[1279px]:absolute bottom-[50%]">
+            <div className="flex flex-col gap-3 items-center max-[768px]:static max-[1279px]:absolute min-[1279px]:translate-y-5 bottom-[50%] ">
               <p className="font-light">Follow Ecommystery</p>
               <div className="flex gap-5 flex-wrap justify-center sm:justify-start xl:justify-end">
                 {Socials.map((social) => (

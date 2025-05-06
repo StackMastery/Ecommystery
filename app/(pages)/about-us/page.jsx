@@ -1,5 +1,6 @@
 import AboutHero from "@/app/components/pages/about/Hero";
 import Information from "@/app/components/pages/about/Information";
+import Team from "@/app/components/pages/about/Team";
 import Video from "@/app/components/pages/Home/Video";
 
 const AboutPage = () => {
@@ -8,6 +9,7 @@ const AboutPage = () => {
       <AboutHero />
       <Information />
       <Video />
+      <Team />
     </>
   );
 };

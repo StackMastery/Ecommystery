@@ -221,3 +221,10 @@
     overflow-y: scroll;
   }
 }
+
+.teamHover {
+  &:hover {
+    -webkit-filter: drop-shadow(5px -2px 0px #ffcb33);
+    filter: drop-shadow(5px -2px 0px #ffcb33);
+  }
+}
