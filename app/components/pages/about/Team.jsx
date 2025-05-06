@@ -20,9 +20,7 @@ const Team = () => {
             </p>
           </div>
           <div className="w-full grid grid-cols-1 min-[450px]:grid-cols-2 lg:grid-cols-3 gap-10 gap-x-20 pt-10">
-            <Suspense fallback={<>Hello</>}>
-              <TeamServer />
-            </Suspense>
+            <TeamServer />
           </div>
         </TeamClient>
       </section>

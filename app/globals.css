@@ -161,50 +161,6 @@
   }
 }
 
-.animated-hero {
-  opacity: 0;
-  transform: scale(1);
-  animation: fadeInScale 0.6s ease-out 1s forwards,
-    float 3s ease-in-out 2s infinite;
-}
-
-@keyframes fadeInScale {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes slideFadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes gentleShake {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  25% {
-    transform: translateY(-1px) rotate(2deg);
-  }
-  50% {
-    transform: translateY(5px) rotate(-3deg);
-  }
-  75% {
-    transform: translateY(-1px) rotate(5deg);
-  }
-}
-
-.entrance-shake {
-  opacity: 0;
-  transform: translateY(10px);
-  animation: slideFadeUp 0.8s ease-out 1.2s forwards,
-    gentleShake 3s ease-in-out 2.2s infinite;
-}
-
 ::selection {
   background-color: #de22ff2f;
   color: #fff;
@@ -226,5 +182,73 @@
   &:hover {
     -webkit-filter: drop-shadow(5px -2px 0px #ffcb33);
     filter: drop-shadow(5px -2px 0px #ffcb33);
+  }
+}
+
+.animated-hero {
+  opacity: 0;
+  --x: 500px;
+  --scale: 0.95;
+  transform: translateX(var(--x)) scale(var(--scale));
+  animation:
+    animateHeroIn 1.2s ease-out forwards,
+    floatEffect 4s ease-in-out 1.2s infinite;
+}
+
+@keyframes animateHeroIn {
+  0% {
+    opacity: 0;
+    transform: translateX(500px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes floatEffect {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1);
+  }
+}
+
+.entrance-shake {
+  opacity: 0;
+  --x: -200px;
+  --y: 10px;
+  transform: translateX(var(--x)) translateY(var(--y));
+  animation:
+    animateShakeIn 1.2s ease-out forwards,
+    gentleShake 4s ease-in-out 1.2s infinite;
+}
+
+@keyframes animateShakeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px) translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes gentleShake {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-2px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(5px) rotate(-3deg);
+  }
+  75% {
+    transform: translateY(-2px) rotate(3deg);
   }
 }

@@ -13,13 +13,13 @@ const TeamClient = ({ children }) => {
       <div className="max-w-[1440px] w-full flex justify-between absolute translate-y-80">
         <motion.span
           initial={{ scale: 0.3, translateY: -300, opacity: 0 }}
-          whileInView={{ scale: 1, translateY: -80, opacity: 1 }}
-          className="bg-[#41013cbb] w-[900px] h-[700px] blur-[150px] flex -translate-x-40"
+          animate={{ scale: 1, translateY: -80, opacity: 1 }}
+          className="bg-[#41013cbb] w-[1200px] h-[1200px] blur-[150px] flex -translate-x-40"
         />
         <motion.span
           initial={{ scale: 0.1, translateY: 200, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1, translateY: 10 }}
-          className="bg-[#19177980] w-[900px] h-[700px] blur-[100px] translate-x-40"
+          animate={{ scale: 1, opacity: 1, translateY: 10 }}
+          className="bg-[#19177980] w-[900px] h-[700px] blur-[150px] translate-x-40"
         />
       </div>
       <motion.div

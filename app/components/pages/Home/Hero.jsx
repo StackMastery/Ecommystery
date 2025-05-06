@@ -154,7 +154,7 @@ const Hero = () => {
                   Certified Amazon Partner
                 </span>
               </label>
-              <Button onClick={ScrollToBottom} className={`mt-5`}>
+              <Button onClick={ScrollToBottom} className={`mt-5 h-[50px]`}>
                 REQUEST QUOTE
                 <ArrowUpRight
                   strokeWidth={1.5}
@@ -177,14 +177,15 @@ const Hero = () => {
           </div>
           <div className="max-w-[1340px] w-full  justify-between absolute hidden lg:flex">
             <Image
-              width={260}
+              width={360}
               src={Hero1Img}
-              className="animated-hero"
+              className="entrance-shake -ml-20"
               alt="Ecommystery"
             />
+
             <Image
               width={260}
-              className="entrance-shake"
+              className="animated-hero z-[9999]"
               src={Hero2Img}
               alt="Ecommystery"
             />
