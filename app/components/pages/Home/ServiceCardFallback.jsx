@@ -1,7 +1,7 @@
 "use client";
 
-import { Skeleton } from "@/components/ui/skeleton";
 import { CardContainer, CardItem } from "@/components/ui/3d-card";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const varriants = {
   purpleGradient: [

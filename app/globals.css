@@ -273,3 +273,13 @@
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
 }
+
+.not-tailwind * {
+  all: unset;
+}
+
+.codeBlock {
+  pre {
+    background-color: transparent !important;
+  }
+}

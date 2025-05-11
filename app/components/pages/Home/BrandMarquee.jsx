@@ -20,7 +20,6 @@ const BrandMarquee = () => {
       <h2 className="mb-5 font-medium text-lg">Trusted by top brands</h2>
 
       <div className="max-w-[1240px] w-full gap-2 flex flex-col items-center justify-center">
-        {/* Marquee with mask fade effect */}
         <div className="relative w-full overflow-hidden mask-fade">
           <Marquee gradient={false}>
             {[...BrandMarqueeData, ...BrandMarqueeData].map((brand, index) => (

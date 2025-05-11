@@ -29,7 +29,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html className="scroll-smooth" lang="en">
       <body
         data-new-gr-c-s-check-loaded="14.1234.0"
         data-gr-ext-installed=""
