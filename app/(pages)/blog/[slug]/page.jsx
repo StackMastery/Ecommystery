@@ -1,10 +1,9 @@
 import { getBlogDetails } from "@/controllers/frontend/blog.controller";
-import BlogHero from "./_components/BlogHero";
-import BlogConent from "./_components/BlogConent";
+import BlogHero from "../_components/BlogHero";
+import BlogConent from "../_components/BlogConent";
 
 const BlogDetailsPage = async ({ params }) => {
   const blog = await getBlogDetails(params.slug);
-  console.log(blog);
 
   return (
     <>

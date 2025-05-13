@@ -283,3 +283,8 @@
     background-color: transparent !important;
   }
 }
+
+.infinite-scroll-component__outerdiv {
+  width: 100% !important;
+  max-width: 1440px;
+}

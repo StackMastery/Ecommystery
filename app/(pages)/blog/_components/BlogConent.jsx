@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { PortableText } from "next-sanity";
-import { componentsSanity } from "../component";
 import { Hash } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -12,6 +11,7 @@ import {
   TwitterShareButton,
 } from "react-share";
 import { FaFacebook, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { componentsSanity } from "../[slug]/component";
 
 const BlogConent = ({ blog }) => {
   const blogUrl = window.location.href;
@@ -28,7 +28,7 @@ const BlogConent = ({ blog }) => {
 
   return (
     <section className="section">
-      <div className="max-w-[1440px] w-full flex justify-center absolute mt-4m20">
+      <div className="max-w-[1440px] w-full flex justify-center absolute mt-4">
         <motion.span
           initial={{ scale: 0.3, translateY: -300, opacity: 0 }}
           animate={{ scale: 1, translateY: -80, opacity: 1 }}
@@ -43,20 +43,24 @@ const BlogConent = ({ blog }) => {
               <ul className="pt-8 space-y-3">
                 {allContentHeads.map((head, index) => {
                   return (
-                    <>
+                    <React.Fragment key={head.id}>
                       <Link
-                        href={`#${head.id}`}
+                        href={`?notify=true#${head.id}`}
                         className="flex gap-2 items-center text-sm md:text-[18px] cursor-pointer group hover:underline"
                       >
-                        <span className="group-hover:opacity-0 transition-all">
-                          {index + 1}.{" "}
-                        </span>
-                        <span className=" absolute -ml-1 opacity-0 group-hover:opacity-100 transition-all">
-                          <Hash size={20} />
-                        </span>
-                        {head.headName.trim()}
+                        <div>
+                          <div className="flex justify-center items-center w-fit -mb-6">
+                            <span className="group-hover:opacity-0 transition-all">
+                              {index + 1}.{" "}
+                            </span>
+                            <span className=" absolute -ml-1 opacity-0 group-hover:opacity-100 transition-all">
+                              <Hash size={20} />
+                            </span>
+                          </div>
+                          <span className="ml-5">{head.headName.trim()}</span>
+                        </div>
                       </Link>
-                    </>
+                    </React.Fragment>
                   );
                 })}
               </ul>
@@ -86,7 +90,7 @@ const BlogConent = ({ blog }) => {
             </div>
           </div>
         </div>
-        <div className="w-full md:w-8/12">
+        <div className="w-full md:w-8/12 -mt-7">
           <PortableText components={componentsSanity} value={blog.content} />
         </div>
       </div>

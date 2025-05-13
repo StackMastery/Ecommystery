@@ -1,14 +1,24 @@
 import { toHtmlId } from "@/lib/utils";
 import { urlFor } from "@/sanity/lib/sanityImage";
 import Image from "next/image";
-import CodeBlock from "./_components/codeBlock";
+import CodeBlock from "../_components/codeBlock";
 
 export const componentsSanity = {
   block: {
-    normal: ({ children }) => <p className="text-base my-4">{children}</p>,
-    h2: ({ children }) => (
-      <h2 className="text-2xl font-bold mt-8 mb-4">{children}</h2>
+    normal: ({ children }) => (
+      <p className="text-base my-4 text-current/70">{children}</p>
     ),
+    h2: ({ children }) => {
+      return (
+        <h2
+          head-name={children[0]}
+          id={toHtmlId(children[0])}
+          className="text-2xl contentHeading w-fit font-bold mt-8 mb-4 scroll-m-40"
+        >
+          {children}
+        </h2>
+      );
+    },
     ch1: ({ children }) => {
       const text = Array.isArray(children)
         ? children.map((child) => child?.text || child).join("")
@@ -18,9 +28,17 @@ export const componentsSanity = {
       );
     },
 
-    h3: ({ children }) => (
-      <h3 className="text-xl font-semibold mt-6 mb-3">{children}</h3>
-    ),
+    h3: ({ children }) => {
+      return (
+        <h3
+          head-name={children[0]}
+          id={toHtmlId(children[0])}
+          className="text-xl contentHeading scroll-m-40 font-semibold mt-6 mb-3"
+        >
+          {children}
+        </h3>
+      );
+    },
   },
   list: {
     bullet: ({ children }) => (
@@ -58,7 +76,7 @@ export const componentsSanity = {
         <Image
           width={600}
           height={600}
-          className="w-full"
+          className="w-full my-5"
           src={urlFor(value).width(800).url()}
           alt={value.alt || "Blog image"}
         />
@@ -91,13 +109,7 @@ export const componentsSanity = {
     ),
     horizontalRule: () => <hr className="my-8 border-t border-white/10" />,
     lineGap: () => <br />,
-    contentHeading: ({ value }) => (
-      <div
-        head-name={value.title}
-        id={toHtmlId(value?.title)}
-        className="contentHeading scroll-mt-40"
-      ></div>
-    ),
+
     code: ({ value }) => {
       return (
         <>

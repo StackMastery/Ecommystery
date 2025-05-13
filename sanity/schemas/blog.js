@@ -69,8 +69,7 @@ export default defineType({
             { title: "H4", value: "h4" },
             { title: "H5", value: "h5" },
             { title: "H6", value: "h6" },
-            { title: "Paragraph", value: "p" },
-            { title: "Normal", value: "normal" },
+            { title: "P", value: "normal" },
           ],
         },
         {
@@ -126,28 +125,6 @@ export default defineType({
           preview: {
             prepare() {
               return { title: "<br />" };
-            },
-          },
-        },
-        {
-          type: "object",
-          name: "contentHeading",
-          title: "Content Heading",
-          icon: Hash,
-          fields: [
-            {
-              name: "title",
-              type: "string",
-            },
-          ],
-          preview: {
-            select: {
-              title: "title",
-            },
-            prepare({ title }) {
-              return {
-                title: `Content Heading${title ? `: ${title}` : ""}`,
-              };
             },
           },
         },

@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
   return (
     <html className="scroll-smooth" lang="en">
       <body
-        data-new-gr-c-s-check-loaded="14.1234.0"
+        data-new-gr-c-s-check-loaded="14.1235.0"
         data-gr-ext-installed=""
         className={`bg-bodyBg overflow-x-hidden text-white [&::-webkit-scrollbar]:w-0 ${plusJakarta.className} antialiased`}
       >

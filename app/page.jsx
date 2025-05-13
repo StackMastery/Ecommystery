@@ -10,7 +10,7 @@ import Services from "./components/pages/Home/Services";
 import Video from "./components/pages/Home/Video";
 
 export async function generateMetadata() {
-  const seo = await fetchSEOBySlug("/");
+  const seo = await fetchSEOBySlug("home");
   return seo;
 }
 
@@ -24,7 +24,7 @@ const Home = () => {
       <CompanyValue />
       <Video />
       {/* <Reviews /> */}
-      <Blogs />
+      {/* <Blogs /> */}
       <NewsLetter />
       <Contact />
     </>
