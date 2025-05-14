@@ -49,7 +49,7 @@ const BlogConent = ({ blog }) => {
                         className="flex gap-2 items-center text-sm md:text-[18px] cursor-pointer group hover:underline"
                       >
                         <div>
-                          <div className="flex justify-center items-center w-fit -mb-6">
+                          <div className="flex justify-center items-center w-fit -mb-[26px]">
                             <span className="group-hover:opacity-0 transition-all">
                               {index + 1}.{" "}
                             </span>

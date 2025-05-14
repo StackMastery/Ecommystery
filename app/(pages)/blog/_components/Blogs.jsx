@@ -8,6 +8,8 @@ import {
   BlogCard,
   BlogCardSkeleton,
 } from "@/app/components/pages/Home/BlogsClient";
+import Image from "next/image";
+import SearchFoundImg from "../../../../public/img/search.png";
 
 const PAGE_SIZE = 3;
 
@@ -74,25 +76,44 @@ const Blogs = () => {
     <section className="section pt-5 pb-20">
       <InfiniteScroll
         dataLength={blogs.length}
-        className="max-w-[1440px] w-full"
+        className="max-w-[1440px] w-full grid grid-cols-12  justify-center gap-5 px-5"
         next={fetchMore}
         hasMore={hasMore}
-        scrollThreshold={0.5}
+        scrollThreshold={0.3}
+        endMessage={
+          <div className="col-span-12 w-full">
+            {blogs?.length > 0 ? (
+              <></>
+            ) : (
+              <div className="w-full flex justify-center py-20 gap-10 flex-col items-center">
+                <Image
+                  width={200}
+                  src={SearchFoundImg}
+                  alt="Search Not Found"
+                />
+                <div className="space-y-5 text-center max-w-[500px]">
+                  <h2 className="text-3xl">Sorry we can found any post</h2>
+                  <p className="text-current/70 font-light">
+                    Sorry, we couldn’t find any blog posts matching your current
+                    query and filters. Please try adjusting your search terms or
+                    removing some filters to explore other available content.
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+        }
         loader={
           <>
-            <div className="w-full grid grid-cols-3 justify-center gap-5 px-5">
-              {Array.from({ length: 3 }).map((_, index) => (
-                <BlogCardSkeleton key={`blog-loader-${index}`} index={index} />
-              ))}
-            </div>
+            {Array.from({ length: 3 }).map((_, index) => (
+              <BlogCardSkeleton key={`blog-loader-${index}`} index={index} />
+            ))}
           </>
         }
       >
-        <div className="w-full grid grid-cols-3 justify-center gap-5 px-5">
-          {blogs.map((blog, index) => (
-            <BlogCard blogData={blog} key={blog.slug.current} index={index} />
-          ))}
-        </div>
+        {blogs.map((blog, index) => (
+          <BlogCard blogData={blog} key={blog.slug.current} index={index} />
+        ))}
       </InfiniteScroll>
     </section>
   );

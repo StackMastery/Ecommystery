@@ -5,13 +5,19 @@ import BlogPageHero from "./_components/Hero";
 
 const BlogPage = () => {
   return (
-    <Suspense>
+    <>
       <BlogPageHero />
-      <BlogCategories />
-      <Suspense>
+      <Suspense
+        fallback={
+          <>
+            <section className="section justify-center min-h-[858px] items-center"></section>
+          </>
+        }
+      >
+        <BlogCategories />
         <Blogs />
       </Suspense>
-    </Suspense>
+    </>
   );
 };
 
