@@ -244,6 +244,16 @@ const Header = () => {
                                 </div>
                               </Link>
                             ))}
+                            <Link
+                              href={"/services"}
+                              className="bg-white/5 px-5 py-2 rounded-md"
+                            >
+                              <h2
+                                className={`bg-clip-text text-[13px] from-pB via-pM to-pY bg-gradient-to-r transition-all group-hover:text-transparent`}
+                              >
+                                See All Services
+                              </h2>
+                            </Link>
                             <div className="absolute inset-x-0 h-px w-1/2 mx-auto -top-px shadow-2xl  bg-gradient-to-r from-transparent via-pM to-transparent" />
                           </div>
                         )}

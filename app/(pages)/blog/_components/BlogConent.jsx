@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 import { PortableText } from "next-sanity";
 import { Hash } from "lucide-react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   FacebookShareButton,
@@ -26,6 +25,16 @@ const BlogConent = ({ blog }) => {
     setallContentHeads(heads);
   }, [blog.content]);
 
+  const scroolToTheHeading = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <section className="section">
       <div className="max-w-[1440px] w-full flex justify-center absolute mt-4">
@@ -36,30 +45,30 @@ const BlogConent = ({ blog }) => {
         />
       </div>
       <div className="max-w-[1240px] flex-col md:flex-row w-full flex justify-between gap-10 px-5 pb-40 relative z-[99999]">
-        <div className="w-full md:w-4/12 space-y-8">
+        <div className="w-full md:w-4/12 space-y-8 pr-5">
           {allContentHeads?.length > 0 && (
             <div>
               <h3 className="text-2xl sm:text-3xl">Table of Contents</h3>
-              <ul className="pt-8 space-y-3">
+              <ul className="pt-8 space-y-4">
                 {allContentHeads.map((head, index) => {
                   return (
                     <React.Fragment key={head.id}>
-                      <Link
-                        href={`?notify=true#${head.id}`}
-                        className="flex gap-2 items-center text-sm md:text-[18px] cursor-pointer group hover:underline"
+                      <button
+                        onClick={() => scroolToTheHeading(head.id)}
+                        className="flex items-start text-md md:text-[18px] cursor-pointer group hover:underline"
                       >
-                        <div>
-                          <div className="flex justify-center items-center w-fit -mb-[26px]">
-                            <span className="group-hover:opacity-0 transition-all">
-                              {index + 1}.{" "}
-                            </span>
-                            <span className=" absolute -ml-1 opacity-0 group-hover:opacity-100 transition-all">
-                              <Hash size={20} />
-                            </span>
-                          </div>
-                          <span className="ml-5">{head.headName.trim()}</span>
+                        <div className="flex justify-center items-center w-fit">
+                          <span className="group-hover:opacity-0 transition-all">
+                            {index + 1}.{" "}
+                          </span>
+                          <span className=" absolute  opacity-0 group-hover:opacity-100 transition-all">
+                            <Hash size={20} />
+                          </span>
                         </div>
-                      </Link>
+                        <span className="ml-2 text-start">
+                          {head.headName.trim()}
+                        </span>
+                      </button>
                     </React.Fragment>
                   );
                 })}

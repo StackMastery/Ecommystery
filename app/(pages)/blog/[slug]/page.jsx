@@ -1,9 +1,14 @@
 import { getBlogDetails } from "@/controllers/frontend/blog.controller";
 import BlogHero from "../_components/BlogHero";
 import BlogConent from "../_components/BlogConent";
+import NotFound from "@/app/not-found";
 
 const BlogDetailsPage = async ({ params }) => {
-  const blog = await getBlogDetails(params.slug);
+  const blog = await getBlogDetails(params?.slug);
+
+  if (!blog.title) {
+    return <NotFound />;
+  }
 
   return (
     <>

@@ -11,7 +11,7 @@ import {
 import Image from "next/image";
 import SearchFoundImg from "../../../../public/img/search.png";
 
-const PAGE_SIZE = 3;
+const PAGE_SIZE = 6;
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -87,12 +87,12 @@ const Blogs = () => {
             ) : (
               <div className="w-full flex justify-center py-20 gap-10 flex-col items-center">
                 <Image
-                  width={200}
+                  width={160}
                   src={SearchFoundImg}
                   alt="Search Not Found"
                 />
                 <div className="space-y-5 text-center max-w-[500px]">
-                  <h2 className="text-3xl">Sorry we can found any post</h2>
+                  <h2 className="text-3xl">Sorry we couldn’t found any post</h2>
                   <p className="text-current/70 font-light">
                     Sorry, we couldn’t find any blog posts matching your current
                     query and filters. Please try adjusting your search terms or

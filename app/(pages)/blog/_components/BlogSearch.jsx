@@ -25,13 +25,13 @@ const BlogSearch = () => {
       params.set("search", query);
     }
 
-    router.push(`?${params.toString()}`);
+    router.push(`?${params.toString()}`, { scroll: false });
   }, [query]);
 
   const clearSearch = () => {
     const params = new URLSearchParams(searchParams.toString());
     params.delete("search");
-    router.push(`?${params.toString()}`);
+    router.push(`?${params.toString()}`, { scroll: false });
     setQuery("");
   };
 

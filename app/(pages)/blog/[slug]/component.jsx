@@ -35,7 +35,7 @@ export const componentsSanity = {
           id={toHtmlId(children[0])}
           className="text-xl contentHeading scroll-m-40 font-semibold mt-6 mb-3"
         >
-          {children}
+          {children}{" "}
         </h3>
       );
     },

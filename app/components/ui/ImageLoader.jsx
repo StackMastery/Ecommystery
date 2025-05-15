@@ -14,6 +14,7 @@ const ImageLoader = ({ src, alt, ...props }) => {
       <Image
         src={src}
         alt={alt}
+        className="object-cover w-full h-full"
         onLoad={() => setLoading(false)}
         onError={() => setLoading(false)}
         {...props}
