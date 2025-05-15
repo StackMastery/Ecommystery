@@ -12,16 +12,9 @@ import Hero2Img from "../../../../public/img/hero2.png";
 import { ArrowUpRight, Star } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { scroolToTheHeading } from "@/app/(pages)/blog/_components/BlogConent";
 
 const Hero = () => {
-  const ScrollToBottom = () => {
-    window.scrollTo({
-      top: 500,
-      left: 0, // horizontal position (optional)
-      behavior: "smooth", // smooth scroll animation
-    });
-  };
-
   return (
     <>
       <section className="section z-10 relative">
@@ -154,7 +147,12 @@ const Hero = () => {
                   Certified Amazon Partner
                 </span>
               </label>
-              <Button onClick={ScrollToBottom} className={`mt-5 h-[50px]`}>
+              <Button
+                onClick={() => {
+                  scroolToTheHeading("contact");
+                }}
+                className={`mt-5 h-[50px]`}
+              >
                 REQUEST QUOTE
                 <ArrowUpRight
                   strokeWidth={1.5}

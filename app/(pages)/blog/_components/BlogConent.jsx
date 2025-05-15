@@ -12,6 +12,16 @@ import {
 import { FaFacebook, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { componentsSanity } from "../[slug]/component";
 
+export const scroolToTheHeading = (id) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};
+
 const BlogConent = ({ blog }) => {
   const blogUrl = window.location.href;
   const [allContentHeads, setallContentHeads] = useState();
@@ -24,16 +34,6 @@ const BlogConent = ({ blog }) => {
     }));
     setallContentHeads(heads);
   }, [blog.content]);
-
-  const scroolToTheHeading = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
 
   return (
     <section className="section">

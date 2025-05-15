@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
 const Contact = () => {
   return (
     <>
-      <section className="section relative !z-[9999]">
+      <section className="section relative !z-[9999] scroll-m-20" id="contact">
         <motion.div
           initial={{ y: 100, opacity: 0, filter: "blur(10px)" }}
           whileInView={{ y: 0, opacity: 100, filter: "blur(0px)" }}
