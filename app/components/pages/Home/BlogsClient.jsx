@@ -58,7 +58,7 @@ export const BlogCard = ({ index, blogData }) => {
         <Image
           width={114}
           height={33}
-          src={urlFor(blogData.brandLogo.asset).height(33).url()}
+          src={urlFor(blogData?.brandLogo.asset).height(33).url()}
           alt={blogData.title}
           className="max-w-[100px] sm:max-w-[114px] h-auto object-contain brightness-0"
         />

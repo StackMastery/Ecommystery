@@ -27,14 +27,10 @@ export const structure = (S) =>
             ])
         ),
 
-      S.divider(),
-
       S.listItem()
         .title("SEO")
         .icon(Search)
         .child(S.documentTypeList("seo").title("SEO")),
-
-      S.divider(),
 
       S.listItem()
         .title("Blog")
@@ -55,5 +51,23 @@ export const structure = (S) =>
             ])
         ),
 
-      S.divider(),
+      S.listItem()
+        .title("Services")
+        .child(
+          S.list()
+            .title("Blog Content")
+            .items([
+              S.listItem()
+                .title("Services")
+                .icon(BookOpen)
+                .child(S.documentTypeList("service").title("Services")),
+
+              S.listItem()
+                .title("Services Types")
+                .icon(List)
+                .child(
+                  S.documentTypeList("servicesType").title("Services Type")
+                ),
+            ])
+        ),
     ]);

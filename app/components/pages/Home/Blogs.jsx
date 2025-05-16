@@ -1,8 +1,24 @@
-import { getBlogsForHomePage } from "@/controllers/frontend/blog.controller";
+import Link from "next/link";
 import BlogsClient, { BlogCard } from "./BlogsClient";
+import { client } from "@/lib/sanity";
+import { ArrowUpRight } from "lucide-react";
 
 const Blogs = async () => {
-  const { blogs } = await getBlogsForHomePage();
+  const query = `
+  *[_type == "blog"]
+  | order(publishedAt desc)[0...3] {
+    _id,
+    title,
+    slug,
+    publishedAt,
+    timeToRead,
+    brandLogo,
+    category->{title, slug, icon{asset->{url}}},
+    thumbnail,
+  }
+`;
+
+  const blogs = await client.fetch(query);
 
   return (
     <>
@@ -18,10 +34,22 @@ const Blogs = async () => {
               expert tips, <br className="max-[500px]:hidden" />
               and e-commerce inspiration.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-5 mt-10">
+            <div className="grid grid-cols-12 w-full gap-5 mt-10">
               {blogs.map((blog, index) => (
-                <BlogCard blog={blog} index={index} key={`blogs-${index}`} />
+                <BlogCard
+                  blogData={blog}
+                  index={index}
+                  key={`blogs-${index}`}
+                />
               ))}
+            </div>
+            <div className="flex w-full justify-center mt-10">
+              <Link
+                href="/blog"
+                className="bg-gradient-to-b from-[#D4FFD1] uppercase to-white text-black font-semibold text-lg px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300 flex items-center gap-2"
+              >
+                VIEW All Blogs <ArrowUpRight />
+              </Link>
             </div>
           </div>
         </BlogsClient>

@@ -8,6 +8,7 @@ import Hero from "./components/pages/Home/Hero";
 import NewsLetter from "./components/pages/Home/NewsLetter";
 import Services from "./components/pages/Home/Services";
 import Video from "./components/pages/Home/Video";
+import { SeeAllServices } from "./components/pages/Home/ServicesClient";
 
 export async function generateMetadata() {
   const seo = await fetchSEOBySlug("home");
@@ -19,12 +20,13 @@ const Home = () => {
     <>
       <Hero />
       <BrandMarquee />
-      <Services />
+      <Services length={6} />
+      <SeeAllServices />
       <About />
       <CompanyValue />
       <Video />
       {/* <Reviews /> */}
-      {/* <Blogs /> */}
+      <Blogs />
       <NewsLetter />
       <Contact />
     </>
