@@ -71,7 +71,19 @@
       background-position: calc(100% + var(--shiny-width)) 0;
     }
   }
-}
+  --animate-shine: shine var(--duration) infinite linear
+;
+  @keyframes shine {
+  0% {
+    background-position: 0% 0%;
+    }
+  50% {
+    background-position: 100% 100%;
+    }
+  to {
+    background-position: 0% 0%;
+    }
+  }}
 
 :root {
   --radius: 0.625rem;
@@ -287,4 +299,20 @@
 .infinite-scroll-component__outerdiv {
   width: 100% !important;
   max-width: 1440px;
+}
+[data-ui="ListPane"],
+[data-ui="DocumentListPane"] {
+  min-width: 5px !important;
+  max-width: 209px !important;
+}
+
+[data-ui="Container"] {
+  max-width: 60rem !important;
+}
+
+.GEonQ .pt-editable > .pt-block {
+  max-width: 100% !important;
+}
+[data-as="textarea"] {
+  height: 60px;
 }

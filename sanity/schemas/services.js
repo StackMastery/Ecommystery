@@ -40,45 +40,66 @@ export default {
     },
     {
       name: "cGrad",
-      title: "Card Gredient",
+      title: "Card Gradient",
       type: "string",
       validation: (Rule) =>
         Rule.required().custom((value) => {
           if (!value) return true;
-
           const gradientRegex = /^(linear|radial|conic)-gradient\s*\((.+)\)$/i;
-          const isValid = gradientRegex.test(value.trim());
-
           return (
-            isValid ||
+            gradientRegex.test(value.trim()) ||
             "Only valid CSS gradient values are allowed (e.g., 'linear-gradient(...)')"
           );
         }),
     },
     {
       name: "iGrad",
-      title: "Icon Gredient",
+      title: "Icon Gradient",
       type: "string",
       validation: (Rule) =>
         Rule.required().custom((value) => {
           if (!value) return true;
-
           const gradientRegex = /^(linear|radial|conic)-gradient\s*\((.+)\)$/i;
-          const isValid = gradientRegex.test(value.trim());
-
           return (
-            isValid ||
+            gradientRegex.test(value.trim()) ||
             "Only valid CSS gradient values are allowed (e.g., 'linear-gradient(...)')"
           );
         }),
     },
     {
       name: "image",
-      title: "Image",
+      title: "Service Icon",
       type: "image",
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "sTitle",
+      title: "Service Title",
+      type: "string",
+      validation: (Rule) => Rule.required().max(60),
+    },
+    {
+      name: "sDes",
+      title: "Service Description",
+      type: "text",
+      validation: (Rule) => Rule.required().max(160),
+    },
+    {
+      name: "sThumb",
+      title: "Service Thumbnail",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "content",
+      title: "Rich Content",
+      type: "serviceContent",
       validation: (Rule) => Rule.required(),
     },
   ],

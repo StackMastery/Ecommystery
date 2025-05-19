@@ -1,5 +1,6 @@
 import { Instrument_Serif, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import "./script.js";
 import Header from "./components/widget/Header";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Footer from "./components/widget/Footer";

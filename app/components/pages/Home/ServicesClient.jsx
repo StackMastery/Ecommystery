@@ -18,7 +18,7 @@ const ServicesClient = ({ showButton = false, titleDesShow }) => {
             damping: 20,
           }}
         >
-          <h2 className=" text-[38px] md:text-[48px] font-semibold bg-gradient-to-r from-[#226FFF] via-[#DE22FF] to-[#FFE11B] bg-clip-text text-transparent inline-block">
+          <h2 className=" text-[38px] md:text-[48px] font-semibold bg-gradient-to-r pr-1 from-[#226FFF] via-[#DE22FF] to-[#FFE11B] bg-clip-text text-transparent inline-block">
             Our<span className="font-serif italic font-normal">Services</span>
           </h2>
           <p className="text-sm md:text-lg font-light">
@@ -54,7 +54,7 @@ export const SeeAllServices = () => {
           damping: 20,
         }}
       >
-        <div className="max-w-[1400px] w-full flex justify-center  flex-col group items-center border border-white/5 bg-black/5">
+        <div className="max-w-[1400px]  w-full flex justify-center  flex-col group items-center border border-white/5 bg-black/5">
           <div className="flex w-full max-w-[1400px] duration-500 justify-between absolute items-center group-hover:translate-y-14 transition-all">
             <Plus
               className="inset-0 -translate-x-3 -translate-y-6"

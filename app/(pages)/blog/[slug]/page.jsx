@@ -6,7 +6,7 @@ import NotFound from "@/app/not-found";
 const BlogDetailsPage = async ({ params }) => {
   const blog = await getBlogDetails(params?.slug);
 
-  if (!blog.title) {
+  if (!blog) {
     return <NotFound />;
   }
 

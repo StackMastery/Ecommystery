@@ -10,7 +10,7 @@ import NewsLetter from "@/app/components/pages/Home/NewsLetter";
 const ServicesClientPage = ({ children }) => {
   return (
     <>
-      <section className="section z-10 relative">
+      <section className="section z-50 relative">
         <div className="flex justify-center px-10 flex-col pt-52 py-40 items-center w-full max-w-[1440px]">
           <div className="max-w-[1440px] w-full flex justify-between absolute top-20">
             <motion.span
@@ -49,9 +49,9 @@ const ServicesClientPage = ({ children }) => {
               <Button>CONTACT US</Button>
             </Link>
           </motion.div>
-          {children}
         </div>
       </section>
+      {children}
       <div className="py-20 pt-20 relative !z-50">
         <BrandMarquee gred={false} />
       </div>

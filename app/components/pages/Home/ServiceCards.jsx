@@ -13,7 +13,7 @@ const ServiceCard = ({ service }) => {
           style={{
             background: service.cGrad,
           }}
-          className={`cardS  flex flex-col cursor-pointer justify-between w-full h-full rounded-2xl text-black p-8 z-30 relative `}
+          className={`cardS  flex flex-col cursor-text justify-between w-full h-full rounded-2xl text-black p-8 z-30 relative `}
         >
           <div className="flex w-full justify-between gap-5">
             <h3 className="text-lg sm:text-xl font-medium">

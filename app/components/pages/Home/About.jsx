@@ -4,11 +4,12 @@ import ManImg from "../../../../public/img/man.png";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import { motion } from "framer-motion";
 
-const About = () => {
+const About = ({ children, className = "" }) => {
   return (
     <>
-      <section className="section pb-20">
-        <div className="max-w-[1440px] flex-col lg:flex-row w-full flex justify-between px-5 gap-10 items-center">
+      <section className={`section flex-col items-center pb-20 ${className}`}>
+        {children}
+        <div className="max-w-[1440px] flex-col lg:flex-row w-full flex justify-between px-5 gap-10 items-center !z-50 relative">
           <motion.div
             initial={{ opacity: 0, x: -100, filter: "blur(10px)" }}
             whileInView={{ opacity: 100, x: 0, filter: "blur(0px)" }}

@@ -2,6 +2,8 @@ import { toHtmlId } from "@/lib/utils";
 import { urlFor } from "@/sanity/lib/sanityImage";
 import Image from "next/image";
 import CodeBlock from "../_components/codeBlock";
+import ProcessGroup from "../_components/blocks/ProcessGroup";
+import ServiceData from "../_components/blocks/ServiceData";
 
 export const componentsSanity = {
   block: {
@@ -116,6 +118,13 @@ export const componentsSanity = {
           <CodeBlock value={value} />
         </>
       );
+    },
+    processGroup: ({ value }) => {
+      return <ProcessGroup value={value} />;
+    },
+
+    serviceData: ({ value }) => {
+      return <ServiceData data={value} />;
     },
   },
 };

@@ -20,7 +20,7 @@ const Home = () => {
     <>
       <Hero />
       <BrandMarquee />
-      <Services length={6} />
+      <Services className="pt-40" length={6} />
       <SeeAllServices />
       <About />
       <CompanyValue />
