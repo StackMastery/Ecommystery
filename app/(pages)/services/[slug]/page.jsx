@@ -20,7 +20,7 @@ const ServiceDetailsPage = async ({ params }) => {
         <ServiceAbout />
       </About>
       <ServiceContent value={service.content} />
-      <div className="py-20 flex justify-center flex-col items-center relative z-[999] ">
+      <div className="pt-20 -mb-10 flex justify-center flex-col items-center relative z-[999] ">
         <ServicePopularHeadingAndDes />
         <div className="pt-20">
           <Services length={3} titleDesShow={false} />

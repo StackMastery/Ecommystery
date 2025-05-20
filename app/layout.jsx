@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
       <body
         data-new-gr-c-s-check-loaded="14.1235.0"
         data-gr-ext-installed=""
-        className={`bg-bodyBg overflow-x-hidden text-white [&::-webkit-scrollbar]:w-0 ${plusJakarta.className} antialiased`}
+        className={`bg-bodyBg relative overflow-x-hidden text-white [&::-webkit-scrollbar]:w-0 ${plusJakarta.className} antialiased`}
       >
         <TooltipProvider>
           <Header />

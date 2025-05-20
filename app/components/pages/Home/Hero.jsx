@@ -13,6 +13,7 @@ import { ArrowUpRight, Star } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { scroolToTheHeading } from "@/app/(pages)/blog/_components/BlogConent";
+import ShinyText from "@/components/TextAnimations/ShinyText/ShinyText";
 
 const Hero = () => {
   return (
@@ -143,9 +144,12 @@ const Hero = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <span className=" whileInView-pulse font-light">
-                  Certified Amazon Partner
-                </span>
+                <ShinyText
+                  text="Certified Amazon Partner"
+                  disabled={false}
+                  speed={3}
+                  className="custom-class"
+                />
               </label>
               <Button
                 onClick={() => {

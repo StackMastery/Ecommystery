@@ -292,9 +292,11 @@ const HeaderBtns = () => {
           size={20}
         />
       </Link>
-      <Button className={`flex-grow justify-center min-[575px]:flex-grow-0`}>
-        Book A Call
-      </Button>
+      <Link href={"/contact"}>
+        <Button className={`flex-grow justify-center min-[575px]:flex-grow-0`}>
+          Book A Call
+        </Button>
+      </Link>
     </>
   );
 };

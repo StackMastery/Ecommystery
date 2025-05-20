@@ -14,5 +14,5 @@ export async function getServiceDataBySlug(slug) {
     content
   }`;
 
-  return await client.fetch(query, { slug });
+  return await client.fetch(query, { slug }, { next: { revalidate: 10 } });
 }

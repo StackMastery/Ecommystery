@@ -1,6 +1,7 @@
 "use client";
+import GradientText from "@/components/TextAnimations/GradientText/GradientText";
 import { motion } from "framer-motion";
-import { ArrowUp, ArrowUpRight, Plus } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 const ServicesClient = ({ showButton = false, titleDesShow }) => {
@@ -54,38 +55,23 @@ export const SeeAllServices = () => {
           damping: 20,
         }}
       >
-        <div className="max-w-[1400px]  w-full flex justify-center  flex-col group items-center border border-white/5 bg-black/5">
-          <div className="flex w-full max-w-[1400px] duration-500 justify-between absolute items-center group-hover:translate-y-14 transition-all">
-            <Plus
-              className="inset-0 -translate-x-3 -translate-y-6"
-              strokeWidth={0.5}
-            />
-            <Plus
-              className="inset-0 translate-x-3 -translate-y-6"
-              strokeWidth={0.5}
-            />
-          </div>
-          <Link
-            href={`/services`}
-            className="flex uppercase py-3 items-center w-full text-center justify-center group"
+        <Link
+          className="bg-white flex items-center group px-8 py-3 rounded-full"
+          href="/services"
+        >
+          <GradientText
+            colors={["#226FFF", "#DE22FF", "#FFE11B"]}
+            className="px-1"
+            animationSpeed={2.5}
           >
-            See all services{" "}
-            <ArrowUpRight
-              strokeWidth={1.2}
-              className="transition-all group-hover:rotate-45 duration-500 group-hover:translate-x-2"
-            />
-          </Link>
-          <div className="flex w-full max-w-[1400px] duration-500 justify-between items-center absolute group-hover:-translate-y-14 transition-all">
-            <Plus
-              className="inset-0 -translate-x-3 translate-y-6"
-              strokeWidth={0.5}
-            />
-            <Plus
-              className="inset-0 translate-x-3 translate-y-6"
-              strokeWidth={0.5}
-            />
-          </div>
-        </div>
+            VIEW ALL SERVICES
+          </GradientText>
+          <ArrowUpRight
+            strokeWidth={1.5}
+            className=" group-hover:rotate-45 group-hover:translate-x-2 transition-all"
+            color="#684271"
+          />
+        </Link>
       </motion.div>
     </>
   );

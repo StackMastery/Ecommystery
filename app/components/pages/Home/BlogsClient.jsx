@@ -83,7 +83,7 @@ export const BlogCard = ({ index, blogData }) => {
       {/* Title & Button */}
       <div className="mt-auto flex flex-col gap-10">
         <Link href={`/blog/${blogData.slug.current}`}>
-          <h2 className="text-xl md:text-[28px] font-semibold text-black leading-8">
+          <h2 className="text-2xl md:text-[28px] font-semibold text-black leading-8">
             {blogData.title?.slice(0, 49)}
             {blogData.title?.length > 49 && "..."}
           </h2>

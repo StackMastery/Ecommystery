@@ -23,7 +23,12 @@ const Services = async ({ length, titleDesShow = true, className = "" }) => {
           <ServicesClient titleDesShow={titleDesShow} />
           <ServicesClientDiv>
             {services.map((service, index) => (
-              <ServiceCard index={index} key={service._id} service={service} />
+              <ServiceCard
+                length={services?.length || 0}
+                index={index}
+                key={service._id}
+                service={service}
+              />
             ))}
           </ServicesClientDiv>
         </div>
