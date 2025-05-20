@@ -43,7 +43,9 @@ const ServiceCard = ({ service }) => {
               {service.description}
             </p>
             <CardItem>
-              <Link href={`/services/${service.slug.current}`}>
+              <Link href={`/services/ui-ux-design`}>
+                {" "}
+                {/* ${service.slug.current}*/}
                 <button className="px-5 py-2 rounded-full flex items-center bg-white cursor-pointer mt-5 hover:scale-110 transition-all">
                   Explore <ArrowUpRight />
                 </button>

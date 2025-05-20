@@ -75,3 +75,34 @@ const ServicesClientPage = ({ children }) => {
 };
 
 export default ServicesClientPage;
+
+export const ServicePopularHeadingAndDes = () => {
+  return (
+    <>
+      <motion.div
+        initial={{ opacity: 0, filter: "blur(10px)", y: 50 }}
+        whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+        transition={{
+          type: "tween",
+          duration: 0.8,
+          stiffness: 300,
+          damping: 20,
+        }}
+        className="w-full  flex flex-col items-center"
+      >
+        <h2
+          style={{
+            backgroundImage: `linear-gradient(91deg, #226FFF -4.46%, #DE22FF 49.17%, #FFE11B 102.79%)`,
+          }}
+          className="text-4xl md:text-5xl font-bold z-[9999] text-center relative text-transparent  bg-clip-text w-fit"
+        >
+          Popular Services
+        </h2>
+        <p className="text-sm lg:w-11/12 pt-5 font-light max-w-[400px] text-center">
+          Your store’s growth may look effortless, but behind the scenes are
+          refined systems and expert teamwork.
+        </p>
+      </motion.div>
+    </>
+  );
+};

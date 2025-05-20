@@ -22,8 +22,8 @@ const Services = async ({ length, titleDesShow = true, className = "" }) => {
         <div className="max-w-[1440px] w-full -mt-20 px-5">
           <ServicesClient titleDesShow={titleDesShow} />
           <ServicesClientDiv>
-            {services.map((service) => (
-              <ServiceCard key={service._id} service={service} />
+            {services.map((service, index) => (
+              <ServiceCard index={index} key={service._id} service={service} />
             ))}
           </ServicesClientDiv>
         </div>

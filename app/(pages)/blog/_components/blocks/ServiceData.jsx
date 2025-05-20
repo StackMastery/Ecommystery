@@ -26,7 +26,7 @@ const ServiceData = ({ data }) => {
       }}
       className="section z-50 relative"
     >
-      <div className="w-full max-w-[1440px] flex flex-col items-center px-5 pb-20">
+      <div className="w-full max-w-[1240px] flex flex-col items-center px-5 pb-20">
         <div className="w-full flex flex-col items-center gap-5 justify-center">
           <h2
             className="text-4xl text-center gap-1 font-serif italic"
@@ -66,8 +66,8 @@ const ServiceData = ({ data }) => {
             className="bg-[#12114F]/50 relative left-96 top-96 flex w-[900px] -mt-40 h-[900px] blur-[200px] z-10"
           />
         </div>
-        <div className="w-full flex h-full max-w-[1440px] gap-10 pt-20 flex-col md:flex-row relative !z-50">
-          <div className="w-full md:w-[45%] flex flex-col gap-5">
+        <div className="w-full flex h-full max-w-[1440px] gap-x-24 gap-10 pt-20 flex-col md:flex-row relative !z-50">
+          <div className="w-full md:w-6/12 flex flex-col gap-5">
             <h3 className="text-3xl font-medium">{data.title}</h3>
             <p className="text-sm font-light">{data.des}</p>
             <ul className="py-5">
@@ -86,7 +86,7 @@ const ServiceData = ({ data }) => {
               <Button>Contact</Button>
             </Link>
           </div>
-          <div className="w-full md:w-[55%] relative max-[768px]:h-[500px] flex rounded-2xl overflow-hidden">
+          <div className="w-full md:w-6/12 relative max-[768px]:h-[500px] flex rounded-2xl overflow-hidden">
             <Image
               src={urlFor(data.image).width(400).url()}
               alt={data.title}

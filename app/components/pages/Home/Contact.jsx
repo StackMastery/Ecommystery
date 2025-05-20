@@ -26,7 +26,7 @@ const Contact = () => {
           }}
           className="max-w-[1240px] w-full flex-col px-5 gap-10 flex lg:flex-row pt-20 pb-40"
         >
-          <div className="w-full overflow-hidden lg:w-6/12 bg-gradient-to-b from-[#121212] to-[#222222] p-10 md:p-20 rounded-4xl">
+          <div className="relative w-full overflow-hidden lg:w-6/12 bg-gradient-to-b from-[#121212] to-[#222222] p-10 md:p-20  rounded-4xl">
             <h2 className="bg-gradient-to-r text-5xl pr-1 font-semibold w-fit from-pB via-pM to-pY bg-clip-text text-transparent">
               Get in <span className="font-serif italic font-light">Touch</span>
             </h2>
@@ -56,11 +56,11 @@ const Contact = () => {
                 <p className="text-neutral-300 text-[18px]"> +86-15910608039</p>
               </li>
             </ul>
-            <div className="w-full flex justify-end">
+            <div className="w-full flex justify-end !overflow-hidden ">
               <svg
                 width="375"
                 height="229"
-                className="-mb-20 translate-x-20 "
+                className=" bottom-0 absolute translate-x-20"
                 viewBox="0 0 375 229"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
