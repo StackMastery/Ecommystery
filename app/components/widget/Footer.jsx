@@ -17,13 +17,13 @@ const Footer = () => {
     <>
       <footer className="section z-50 relative overflow-hidden">
         <div className="flex w-full max-w-[1440px] border-t px-5 flex-col items-center justify-center border-current/5">
-          <div className="flex w-full justify-between py-20 gap-10 flex-wrap !z-50">
-            <div className="w-full md:w-fit">
+          <div className="flex w-full justify-between py-20 gap-10 flex-wrap !z-50 relative">
+            <div className="w-full md:w-fit relative !z-50">
               <Link href={"/"}>
                 <Logo />
               </Link>
             </div>
-            <ul className="space-y-5 ">
+            <ul className="space-y-5 relative !z-[9999] ">
               {HeaderData.navs.map((nav, index) => (
                 <li
                   className="hover:text-current/100 text-current/80 cursor-pointer transition-all"

@@ -32,18 +32,18 @@ const Blogs = () => {
     if (category) filters.push(`category->slug.current == "${category}"`);
 
     const query = `
-      *[_type == "blog" && ${filters.join(" && ")}]
-      | order(publishedAt desc) [${start}...${end}] {
-        _id,
-        title,
-        slug,
-        publishedAt,
-        timeToRead,
-        brandLogo,
-        category->{title, slug, icon{asset->{url}}},
-        thumbnail,
-      }
-    `;
+  *[_type == "blog" && ${filters.join(" && ")}]
+  | order(publishedAt desc) [${start}...${end}] {
+    _id,
+    title,
+    slug,
+    publishedAt,
+    timeToRead,
+    brandLogo,
+    category->{title, slug, icon{asset->{url}}},
+    thumbnail,
+  }
+`;
 
     return query;
   };

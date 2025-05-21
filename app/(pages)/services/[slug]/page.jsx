@@ -7,6 +7,7 @@ import ServiceContent from "../_components/ServiceContent";
 import Services from "@/app/components/pages/Home/Services";
 import { ServicePopularHeadingAndDes } from "../ServiceClient";
 import { SeeAllServices } from "@/app/components/pages/Home/ServicesClient";
+import Reviews from "@/app/components/pages/Home/Reviews";
 
 const ServiceDetailsPage = async ({ params }) => {
   const { slug } = params;
@@ -20,7 +21,8 @@ const ServiceDetailsPage = async ({ params }) => {
         <ServiceAbout />
       </About>
       <ServiceContent value={service.content} />
-      <div className="pt-20 -mb-10 flex justify-center flex-col items-center relative z-[999] ">
+      <Reviews />
+      <div className="mb-10 flex justify-center flex-col items-center relative  ">
         <ServicePopularHeadingAndDes />
         <div className="pt-20">
           <Services length={3} titleDesShow={false} />

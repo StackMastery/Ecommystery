@@ -316,3 +316,9 @@
 [data-as="textarea"] {
   height: 60px;
 }
+
+@media (min-width: 1024px) {
+  .review-column:nth-child(2) {
+    transform: translateY(-3rem); /* -translate-y-20 */
+  }
+}

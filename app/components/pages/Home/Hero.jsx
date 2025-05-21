@@ -148,7 +148,7 @@ const Hero = () => {
                   text="Certified Amazon Partner"
                   disabled={false}
                   speed={3}
-                  className="custom-class"
+                  className="custom-class text-xl"
                 />
               </label>
               <Button

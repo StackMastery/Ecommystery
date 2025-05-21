@@ -116,7 +116,7 @@ const ContactPageClient = () => {
           </div>
         </div>
       </section>
-      <span className="py-20 flex" />
+      <span className="pt-10 flex" />
       <Contact />
     </>
   );

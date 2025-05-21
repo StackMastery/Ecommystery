@@ -9,6 +9,7 @@ import NewsLetter from "./components/pages/Home/NewsLetter";
 import Services from "./components/pages/Home/Services";
 import Video from "./components/pages/Home/Video";
 import { SeeAllServices } from "./components/pages/Home/ServicesClient";
+import Reviews from "./components/pages/Home/Reviews";
 
 export async function generateMetadata() {
   const seo = await fetchSEOBySlug("home");
@@ -25,7 +26,7 @@ const Home = () => {
       <About />
       <CompanyValue />
       <Video />
-      {/* <Reviews /> */}
+      <Reviews />
       <Blogs />
       <NewsLetter />
       <Contact />

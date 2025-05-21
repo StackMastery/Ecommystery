@@ -43,7 +43,7 @@ function SelectContent({ className, children, position = "popper", ...props }) {
       <SelectPrimitive.Content
         data-slot="select-content"
         className={cn(
-          "bg-[#191919]/50 backdrop-blur-md px-0 rounded-xl mt-2 z-[99999]",
+          "bg-[#191919]/50 backdrop-blur-md overflow-hidden px-0 rounded-xl mt-2 z-[99999]",
           position === "popper" &&
             "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
           className
@@ -82,7 +82,7 @@ function SelectItem({ className, children, ...props }) {
     <SelectPrimitive.Item
       data-slot="select-item"
       className={cn(
-        "px-3 text-[#BABABA] py-2 outline-0 hover:bg-white/5 items-center flex  cursor-pointer !text-lg",
+        "px-3 text-[#BABABA] py-2 w-[101%] outline-0 hover:bg-white/5 items-center flex  cursor-pointer !text-lg",
         className
       )}
       {...props}

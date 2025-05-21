@@ -96,3 +96,15 @@ export const ServicesClientDiv = ({ children }) => {
     </>
   );
 };
+
+export const ReviewsBackground = () => {
+  return (
+    <>
+      <motion.span
+        initial={{ scale: 0.1, translateY: 200, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1, translateY: 10 }}
+        className="bg-[#4E1A91]/50 absolute flex w-[1200px]  h-[1200px] blur-[300px] z-10"
+      />
+    </>
+  );
+};

@@ -25,7 +25,7 @@ const BlogHero = ({
               width={120}
               height={120}
               className="max-h-[40px filter invert brightness-0"
-              src={urlFor(brand).width(120).url()}
+              src={urlFor(brand).width(250).url()}
               alt={title}
             />
             <h1 className="text-5xl md:text-6xl font-medium">{title}</h1>

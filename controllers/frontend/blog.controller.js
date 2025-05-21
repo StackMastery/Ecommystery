@@ -1,10 +1,3 @@
-import BrandKlasha from "../../public/blog/brands/klasha.svg";
-import BrandBitbye from "../../public/blog/brands/bitbye.svg";
-
-// Thumb
-import Thumb1 from "../../public/blog/thumb/1.png";
-import Thumb2 from "../../public/blog/thumb/2.png";
-import Thumb3 from "../../public/blog/thumb/3.png";
 import { client } from "@/sanity/lib/client";
 
 export const getBlogDetails = async (slug) => {

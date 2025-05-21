@@ -4,6 +4,7 @@ import serviceData from "../schemas/blocks/serviceData";
 import blog from "../schemas/blog";
 import blogCategory from "../schemas/blogCategory";
 import competencies from "../schemas/competencies";
+import reviews from "../schemas/reviews";
 import seo from "../schemas/seo";
 import services from "../schemas/services";
 import serviceType from "../schemas/serviceType";
@@ -21,5 +22,6 @@ export const schema = {
     serviceContent,
     processGroup,
     serviceData,
+    reviews,
   ],
 };

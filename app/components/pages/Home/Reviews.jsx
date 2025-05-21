@@ -1,23 +1,16 @@
-"use client";
+import { fetchReviews } from "@/controllers/frontend/review.controller";
+import { ReviewsGrid } from "../../ui/ReviewCard";
+import { ReviewsBackground } from "./ServicesClient";
 
-import { motion } from "framer-motion";
+const Reviews = async () => {
+  const reviews = await fetchReviews();
 
-const Reviews = () => {
   return (
     <>
       <section className="section relative !z-50 py-10 pb-40">
-        <motion.div
-          initial={{ y: 100, opacity: 0, filter: "blur(10px)" }}
-          whileInView={{ y: 0, opacity: 100, filter: "blur(0px)" }}
-          transition={{
-            type: "tween",
-            duration: 0.8,
-            stiffness: 300,
-            damping: 20,
-          }}
-          className="w-full max-w-[1440px] px-5 flex justify-center items-center flex-col"
-        >
-          <div className="w-full">
+        <div className="w-full max-w-[1440px] px-5 flex justify-center items-center flex-col">
+          <ReviewsBackground />
+          <div className="w-full relative z-10">
             <h2 className="text-4xl md:text-5xl font-extralight text-center italic font-serif">
               Great work{" "}
               <span className="text-transparent font-familyN bg-gradient-to-r from-pM via-pM to-[#f1c37e] font-semibold bg-clip-text not-italic">
@@ -35,7 +28,10 @@ const Reviews = () => {
               entrepreneurs.
             </p>
           </div>
-        </motion.div>
+          <div className="w-full relative lg:pt-5 z-10">
+            <ReviewsGrid reviews={reviews} />
+          </div>
+        </div>
       </section>
     </>
   );
