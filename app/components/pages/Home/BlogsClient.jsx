@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { cardStyleByIndex } from "./ServiceCards";
 
 const BlogsClient = ({ children }) => {
   return (
@@ -51,7 +52,7 @@ export const BlogCard = ({ index, blogData }) => {
     <div
       className={`bg-gradient-to-b flex flex-col p-6 sm:p-8 rounded-3xl transition-shadow hover:shadow-lg
     col-span-12 min-[450px]:col-span-6 md:col-span-4
-    ${getClassByIndex(index)} to-white`}
+    ${getClassByIndex(index)} to-white ${cardStyleByIndex[index]} ${length === index + 1 ? "!rounded-r-none" : ""} ${length - 2 === index + 1 ? "!rounded-l-none " : ""}`}
     >
       {/* Logo */}
       <div className="h-[40px] flex items-center mb-4">

@@ -5,9 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const ServiceCard = ({ service, index, length }) => {
-  const cardStyleByIndex = ["!rounded-l-none", "", "!rounded-r-none"];
+export const cardStyleByIndex = ["!rounded-l-none", "", "!rounded-r-none"];
 
+const ServiceCard = ({ service, index, length }) => {
   return (
     <>
       <CardContainer className="!z-30  w-full flex h-full">
@@ -15,7 +15,7 @@ const ServiceCard = ({ service, index, length }) => {
           style={{
             background: service.cGrad,
           }}
-          className={`cardS  flex flex-col cursor-text justify-between w-full h-full rounded-2xl text-black p-8 z-30 relative ${cardStyleByIndex[index]} ${length === index + 1 ? "!rounded-r-none" : ""} ${length - 2 === index + 1 ? "!rounded-l-none " : ""}}`}
+          className={`cardS  flex flex-col cursor-text justify-between w-full h-full rounded-2xl text-black p-8 z-30 relative ${cardStyleByIndex[index]} ${length === index + 1 ? "!rounded-r-none" : ""} ${length - 2 === index + 1 ? "!rounded-l-none " : ""}`}
         >
           <div className="flex w-full justify-between gap-5">
             <h3 className="text-lg sm:text-xl font-medium">

@@ -9,15 +9,12 @@ const ReviewCard = ({ data, index }) => {
     <>
       <div
         className={`
-    ${
-      index + 1 === 5
-        ? "bg-gradient-to-br  from-[#FA6BE9]/30 to-white/5"
-        : "bg-white/5"
-    }
+
     w-full h-fit lg:col-span-4
-    flex flex-col justify-between gap-5 p-8 rounded-2xl
+    flex flex-col justify-between relative overflow-hidden group gap-5 p-8 rounded-3xl bg-white/5 transition-all
   `}
       >
+        <span className="bg-gradient-to-br  from-[#FA6BE9]/30 group-hover:opacity-100 opacity-0 transition-all -translate-x-20 -translate-y-3 group-hover:translate-x-0 group-hover:translate-y-0 via-transparent to-transparent absolute inset-0"></span>
         <div className="flex flex-col gap-5">
           <div className="flex w-full justify-between items-center">
             <span className="flex items-center gap-1">

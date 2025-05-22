@@ -24,7 +24,7 @@ export const Input = forwardRef(
         {label && <label className="font-light text-xl">{label} </label>}
         <Component
           defaultValue={defaultValue}
-          className={`bg-white/5 text-lg placeholder:text-[#767577] outline-none px-5 rounded-full py-3 ${className} ${
+          className={`bg-white/5 text-lg placeholder:text-[#767577] w-full outline-none px-5 rounded-full py-3 ${className} ${
             inputType === "textarea" && "!rounded-2xl"
           }`}
           ref={ref}
