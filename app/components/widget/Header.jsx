@@ -15,8 +15,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import Hamburger from "hamburger-react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { urlFor } from "@/sanity/lib/sanityImage";
 
-const Header = () => {
+const Header = ({ services }) => {
   const [isMenuOff, setisMenuOff] = useState();
   const [scrolled, setScrolled] = useState(false);
   const [servicesCollaps, setservicesCollaps] = useState(true);
@@ -96,44 +97,51 @@ const Header = () => {
                     <TooltipContent
                       className={`w-[900px]  backdrop-blur-2xl rounded-2xl border bg-white/5 py-2 border-white/10 mt-8 hidden lg:block`}
                     >
-                      <div className="grid grid-cols-3 p-5 gap-8">
-                        {li.childrens.map((childNav, index) => (
+                      <div className="grid grid-cols-12 p-5 gap-8">
+                        {services.map((childNav, index) => (
                           <Link
                             key={`servieces-${index}`}
-                            className="flex gap-3 group items-center"
+                            className="flex gap-3 group col-span-4 items-center"
                             href={"/services"}
                           >
                             <span
-                              className={`to-white p-2 flex justify-center h-9 w-9 rounded-full ${childNav.className}`}
+                              style={{ backgroundImage: childNav.iGrad }}
+                              className="flex rounded-full overflow-hidden bg-white/50"
                             >
-                              <Image
-                                width={30}
-                                src={childNav.icon}
-                                alt={childNav.element}
-                              />
+                              <span
+                                style={{ background: childNav.iGrad }}
+                                className={`to-white p-2 flex justify-center h-9 w-9 rounded-full `}
+                              >
+                                <Image
+                                  width={30}
+                                  height={30}
+                                  src={urlFor(childNav.image).url()}
+                                  alt={childNav.title}
+                                />
+                              </span>
                             </span>
                             <div>
                               <h4 className="text-[#B3B3B3] text-[12px] mt-1">
-                                {childNav.type}
+                                {childNav.type.title}
                               </h4>
                               <h2
                                 className={`bg-clip-text text-[16px] from-pB via-pM to-pY bg-gradient-to-r transition-all group-hover:text-transparent`}
                               >
-                                {childNav.element}
+                                {childNav.title}
                               </h2>
                             </div>
                           </Link>
                         ))}
                         <Link
-                          className="flex gap-3 bg-white/5 border justify-center border-white/10 rounded-md group items-center"
+                          className="flex gap-3 col-span-12 -mb-2 bg-white/5 border justify-center border-white/10 rounded-md group items-center"
                           href={"/services"}
                         >
                           <div>
-                            <h2
-                              className={`bg-clip-text text-[16px] from-pB via-pM to-pY bg-gradient-to-r transition-all group-hover:text-transparent`}
+                            <p
+                              className={`bg-clip-text text-[16px] py-2 from-pB via-pM to-pY bg-gradient-to-r transition-all group-hover:text-transparent`}
                             >
                               See All Services
-                            </h2>
+                            </p>
                           </div>
                         </Link>
                       </div>
@@ -217,29 +225,36 @@ const Header = () => {
                         </button>
                         {!servicesCollaps && (
                           <div className=" grid max-[550px]:grid-cols-1 grid-cols-2 min-[720px]:grid-cols-3 gap-5 text-xs backdrop-blur-3xl bg-pM/10 border -my-3 p-5 gap-x-10 border-white/5 rounded-md ">
-                            {li.childrens.map((childNav, index) => (
+                            {services.map((childNav, index) => (
                               <Link
                                 key={`servieces-${index}`}
                                 className="flex gap-3 group items-center"
                                 href={"/services"}
                               >
                                 <span
-                                  className={`to-white p-2 flex justify-center h-8 w-8 scale-90 rounded-full ${childNav.className}`}
+                                  style={{ backgroundImage: childNav.iGrad }}
+                                  className="flex rounded-full overflow-hidden bg-white/50"
                                 >
-                                  <Image
-                                    width={20}
-                                    src={childNav.icon}
-                                    alt={childNav.element}
-                                  />
+                                  <span
+                                    style={{ background: childNav.iGrad }}
+                                    className={`to-white p-2 flex justify-center h-8 w-8 scale-90 rounded-full ${childNav.className}`}
+                                  >
+                                    <Image
+                                      width={20}
+                                      height={20}
+                                      src={urlFor(childNav.image).url()}
+                                      alt={childNav.title}
+                                    />
+                                  </span>
                                 </span>
                                 <div>
                                   <h4 className="text-[#B3B3B3] text-[8px]">
-                                    {childNav.type}
+                                    {childNav.type.title}
                                   </h4>
                                   <h2
                                     className={`bg-clip-text from-pB via-pM to-pY bg-gradient-to-r transition-all group-hover:text-transparent`}
                                   >
-                                    {childNav.element}
+                                    {childNav.title}
                                   </h2>
                                 </div>
                               </Link>
@@ -280,7 +295,8 @@ const HeaderBtns = () => {
     <>
       <Link
         className="bg-[#30AF5F] whatsappBtn transition-all group flex w-10 h-10 items-center justify-center p-2 rounded-full"
-        href={`wa.me`}
+        target="_blank"
+        href={`https://wa.me/8801714114459`}
       >
         <MdOutlineWhatsapp
           className=" group-hover:opacity-0 transition-all"

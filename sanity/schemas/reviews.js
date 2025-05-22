@@ -8,11 +8,7 @@ export default {
       type: "string",
       title: "Author Name",
     },
-    {
-      name: "hobby",
-      type: "string",
-      title: "Hobby",
-    },
+
     {
       name: "review",
       type: "text",

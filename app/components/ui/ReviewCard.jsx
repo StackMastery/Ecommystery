@@ -101,7 +101,6 @@ const ReviewCard = ({ data, index }) => {
           />
           <div>
             <h3 className="text-lg">{data.name}</h3>
-            <p className="text-sm">{data.hobby}</p>
           </div>
         </div>
       </div>

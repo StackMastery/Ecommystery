@@ -102,5 +102,11 @@ export default {
       type: "serviceContent",
       validation: (Rule) => Rule.required(),
     },
+    {
+      name: "order",
+      title: "Order",
+      type: "number",
+      validation: (Rule) => Rule.required(),
+    },
   ],
 };

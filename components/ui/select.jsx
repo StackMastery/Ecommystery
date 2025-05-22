@@ -92,7 +92,9 @@ function SelectItem({ className, children, ...props }) {
           <CheckIcon className="size-5 -translate-x-2" />
         </SelectPrimitive.ItemIndicator>
       </span>
-      <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
+      <SelectPrimitive.ItemText className="w-full">
+        {children}
+      </SelectPrimitive.ItemText>
     </SelectPrimitive.Item>
   );
 }

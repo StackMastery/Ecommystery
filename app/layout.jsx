@@ -4,6 +4,7 @@ import "./script.js";
 import Header from "./components/widget/Header";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Footer from "./components/widget/Footer";
+import HeaderServer from "./components/widget/HeaderServer";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -37,7 +38,7 @@ export default function RootLayout({ children }) {
         className={`bg-bodyBg relative overflow-x-hidden text-white [&::-webkit-scrollbar]:w-0 ${plusJakarta.className} antialiased`}
       >
         <TooltipProvider>
-          <Header />
+          <HeaderServer />
           {children}
           <Footer />
         </TooltipProvider>

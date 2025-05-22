@@ -1,6 +1,7 @@
 "use client";
+
 import { useEffect, useState } from "react";
-import { client } from "@/lib/sanity"; // adjust the path as needed
+import { client } from "@/lib/sanity";
 import {
   Select,
   SelectContent,
@@ -12,6 +13,7 @@ import { Input } from "../../ui/Input";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -23,6 +25,7 @@ const Contact = () => {
   });
 
   const [services, setServices] = useState([]);
+  const [customBudget, setCustomBudget] = useState("");
 
   useEffect(() => {
     client
@@ -33,14 +36,18 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Data Object:", formData);
+    const finalData = {
+      ...formData,
+      budget: formData.budget === "custom" ? customBudget : formData.budget,
+    };
+    console.log("Form Data Object:", finalData);
   };
 
   return (
     <section className="section relative !z-[9999] scroll-m-20" id="contact">
       <motion.div
         initial={{ y: 100, opacity: 0, filter: "blur(10px)" }}
-        whileInView={{ y: 0, opacity: 100, filter: "blur(0px)" }}
+        whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
         transition={{
           type: "tween",
           duration: 0.8,
@@ -49,6 +56,7 @@ const Contact = () => {
         }}
         className="max-w-[1240px] w-full flex-col px-5 gap-10 flex lg:flex-row pt-20 pb-40"
       >
+        {/* Left Info Section */}
         <div className="relative w-full overflow-hidden lg:w-6/12 bg-gradient-to-b from-[#121212] to-[#222222] p-10 md:p-20  rounded-4xl">
           <h2 className="bg-gradient-to-r text-4xl md:text-5xl pr-1 font-semibold w-fit from-pB via-pM to-pY bg-clip-text text-transparent">
             Get in <span className="font-serif italic font-light">Touch</span>
@@ -59,31 +67,21 @@ const Contact = () => {
           </p>
           <ul className="pt-10 space-y-8">
             <li>
-              <h2 className="text-xl font-medium text-white">Address</h2>
+              <h2 className="text-xl font-medium text-white">Email</h2>
               <p className="text-neutral-300 text-[18px]">
-                {" "}
-                No. 607, Building 1, Brilliant
-                <br className="sm:block hidden" /> International, Shangdi 10th
-                Street
+                <Link href="mailto:info@wppop.com">info@wppop.com</Link>
               </p>
             </li>
             <li>
-              <h2 className="text-xl font-medium text-white">Address</h2>
-              <p className="text-neutral-300 text-[18px]">
-                {" "}
-                Email info@wppop.com
-              </p>
-            </li>
-            <li>
-              <h2 className="text-xl font-medium text-white">WhatsApp</h2>
-              <p className="text-neutral-300 text-[18px]"> +86-15910608039</p>
+              <h2 className="text-xl font-medium text-white">Phone</h2>
+              <p className="text-neutral-300 text-[18px]">+86-15910608039</p>
             </li>
           </ul>
-          <div className="w-full flex justify-end !overflow-hidden ">
+          <div className="w-full flex justify-end !overflow-hidden">
             <svg
               width="375"
               height="229"
-              className=" bottom-0 absolute translate-x-20"
+              className="bottom-0 absolute animate-pulse translate-x-20"
               viewBox="0 0 375 229"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -107,6 +105,8 @@ const Contact = () => {
             </svg>
           </div>
         </div>
+
+        {/* Form */}
         <form
           onSubmit={handleSubmit}
           className="w-full lg:w-7/12 space-y-10 p-5 sm:p-10 lg:p-0"
@@ -125,6 +125,8 @@ const Contact = () => {
               setFormData({ ...formData, email: e.target.value })
             }
           />
+
+          {/* Service Select */}
           <div className="space-y-3 -mb-3 flex flex-col">
             <label className="font-light text-xl">Service You Need</label>
             <Select
@@ -137,7 +139,7 @@ const Contact = () => {
               </SelectTrigger>
               <SelectContent>
                 {services.map((item) => (
-                  <SelectItem key={item.slug} value={item.slug}>
+                  <SelectItem key={item.slug} value={item.title}>
                     {item.title}
                   </SelectItem>
                 ))}
@@ -145,12 +147,13 @@ const Contact = () => {
             </Select>
           </div>
 
+          {/* Budget Select */}
           <div className="space-y-3 pt-8 -mb-5 flex flex-col">
             <label className="font-light text-xl">Project Budget</label>
             <Select
-              onValueChange={(value) =>
-                setFormData({ ...formData, budget: value })
-              }
+              onValueChange={(value) => {
+                setFormData({ ...formData, budget: value });
+              }}
             >
               <SelectTrigger>
                 <SelectValue placeholder="Ex: $1k-2k" />
@@ -160,17 +163,24 @@ const Contact = () => {
                 <SelectItem value="1000-2000">$1000-$2000</SelectItem>
                 <SelectItem value="3000-4000">$3000-$4000</SelectItem>
                 <SelectItem value="5000-10000">$5000-$10000</SelectItem>
-                <SelectItem value="more">More</SelectItem>
+                <SelectItem value="custom">Custom</SelectItem>
               </SelectContent>
             </Select>
+            {formData.budget === "custom" && (
+              <Input
+                type="number"
+                placeholder="Enter custom amount"
+                value={customBudget}
+                className="rounded-md mb-2"
+                onChange={(e) => setCustomBudget(e.target.value)}
+              />
+            )}
           </div>
 
           <div className="pt-8">
             <Input
-              rows="5"
               inputType="textarea"
-              label="Project Details"
-              className="[&::-webkit-scrollbar]:w-0"
+              rows="5"
               placeholder="Write your inquiry details here and send us."
               value={formData.details}
               onChange={(e) =>
@@ -181,7 +191,7 @@ const Contact = () => {
 
           <Button
             type="submit"
-            className="mt-5 w-full !h-14 text-xl font-medium"
+            className="mt-5 w-full !h-14 text-xl font-medium group"
           >
             REQUEST QUOTE
             <ArrowUpRight

@@ -12,8 +12,6 @@ const ServiceData = ({ data }) => {
   const extractedStyle = useParsedStyle(data.hTitle);
   const parts = useSplitTitleParts(data.hTitle);
 
-  console.log(data);
-
   return (
     <motion.section
       initial={{ y: 100, opacity: 0, filter: "blur(10px)" }}
