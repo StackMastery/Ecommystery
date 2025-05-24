@@ -74,7 +74,7 @@ const Contact = () => {
             </li>
             <li>
               <h2 className="text-xl font-medium text-white">Phone</h2>
-              <p className="text-neutral-300 text-[18px]">+86-15910608039</p>
+              <p className="text-neutral-300 text-[18px]">+13029669508</p>
             </li>
           </ul>
           <div className="w-full flex justify-end !overflow-hidden">
