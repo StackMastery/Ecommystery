@@ -44,7 +44,7 @@ const colors = [
 ];
 
 const getClassByIndex = (index) => {
-  return colors[index % colors.length];
+  return colors[index % colors?.length];
 };
 
 export const BlogCard = ({ index, blogData }) => {
@@ -52,7 +52,10 @@ export const BlogCard = ({ index, blogData }) => {
     <div
       className={`bg-gradient-to-b flex flex-col p-6 sm:p-8 rounded-3xl transition-shadow hover:shadow-lg
     col-span-12 min-[450px]:col-span-6 md:col-span-4
-    ${getClassByIndex(index)} to-white ${cardStyleByIndex[index]} ${length === index + 1 ? "!rounded-r-none" : ""} ${length - 2 === index + 1 ? "!rounded-l-none " : ""}`}
+${getClassByIndex(index)} to-white ${cardStyleByIndex[index]} 
+${typeof length === "number" && index + 1 === length ? "!rounded-r-none" : ""} 
+${typeof length === "number" && index + 1 === length - 1 ? "!rounded-l-none" : ""}
+`}
     >
       {/* Logo */}
       <div className="h-[40px] flex items-center mb-4">

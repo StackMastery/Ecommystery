@@ -74,7 +74,7 @@ const ServiceData = ({ data }) => {
                   <li className="text-sm font-light cursor-pointer flex gap-2 items-center">
                     {item.title}
                   </li>
-                  {index !== data.list.length - 1 && (
+                  {index !== data.list?.length - 1 && (
                     <div className="border-b border-white/10 my-3 w-full" />
                   )}
                 </React.Fragment>

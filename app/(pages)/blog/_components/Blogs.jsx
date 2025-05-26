@@ -52,7 +52,7 @@ const Blogs = () => {
     const query = buildQuery(pageIndex);
     const newBlogs = await client.fetch(query);
 
-    if (newBlogs.length < PAGE_SIZE) setHasMore(false);
+    if (newBlogs?.length < PAGE_SIZE) setHasMore(false);
     if (pageIndex === 0) {
       setBlogs(newBlogs);
     } else {
@@ -75,7 +75,7 @@ const Blogs = () => {
   return (
     <section className="section pt-5 pb-20">
       <InfiniteScroll
-        dataLength={blogs.length}
+        dataLength={blogs?.length}
         className="max-w-[1440px] w-full grid grid-cols-12  justify-center gap-5 px-5"
         next={fetchMore}
         hasMore={hasMore}

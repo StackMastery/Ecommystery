@@ -34,7 +34,7 @@ export const CompanyValueCard = ({ values, value, index }) => {
       }}
       key={`value-${index}`}
       className={`bg-white/5 rounded-2xl cursor-text z-50 p-8 w-full flex flex-col gap-4 ${
-        values.length - 1 === index
+        values?.length - 1 === index
           ? "col-span-12"
           : "col-span-12 sm:col-span-6"
       }`}

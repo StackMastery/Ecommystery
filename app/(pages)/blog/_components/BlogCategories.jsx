@@ -29,7 +29,7 @@ const BlogCategories = async () => {
             {categoriesMap.slice(0, 4).map((category) => (
               <CategoryButton key={category.slug.current} category={category} />
             ))}
-            {categoriesMap.length > 4 && (
+            {categoriesMap?.length > 4 && (
               <Tooltip>
                 <TooltipTrigger asChild>
                   <div className="p-3 bg-white/5 h-10 w-10 md:w-12 md:h-12 flex justify-center items-center cursor-pointer rounded-full transition shrink-0">
