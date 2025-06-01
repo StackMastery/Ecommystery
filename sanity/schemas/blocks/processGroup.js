@@ -24,13 +24,13 @@ export default {
               name: "title",
               title: "Title",
               type: "string",
-              validation: (Rule) => Rule.required().max(50),
+              validation: (Rule) => Rule.required().max(160),
             },
             {
               name: "description",
               title: "Description",
               type: "text",
-              validation: (Rule) => Rule.required().max(120),
+              validation: (Rule) => Rule.required().max(500),
             },
           ],
           preview: {
