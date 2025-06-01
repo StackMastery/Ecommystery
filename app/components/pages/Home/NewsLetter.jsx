@@ -8,15 +8,14 @@ import M5 from "../../../../public/members/5.png";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
-import { scroolToTheHeading } from "@/app/(pages)/blog/_components/BlogConent";
 import Link from "next/link";
 const members = [M1, M2, M3, M4, M5];
 const colors = ["#FFF6D5", "#EBF5E0", "#DBF3F1", "#C7DEF8", "#E8D1E4"];
 
-const NewsLetter = () => {
+const NewsLetter = ({ className = "" }) => {
   return (
     <>
-      <section className="section">
+      <section className={`section ${className}`}>
         <motion.div
           initial={{ y: 100, opacity: 0, filter: "blur(10px)" }}
           whileInView={{ y: 0, opacity: 100, filter: "blur(0px)" }}

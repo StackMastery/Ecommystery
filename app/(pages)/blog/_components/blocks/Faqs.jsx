@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronUp } from "lucide-react";
 import { useState } from "react";
+import { fadeInUpVariant } from "./TitleDes";
 
 const Faqs = ({ faqs }) => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -12,7 +13,12 @@ const Faqs = ({ faqs }) => {
   };
 
   return (
-    <section className="section py-20">
+    <motion.section
+      variants={fadeInUpVariant}
+      initial="hidden"
+      whileInView="visible"
+      className="section py-20"
+    >
       <div className="max-w-[1040px] w-full flex flex-col items-center px-5">
         <div className="w-full relative z-10 flex items-center flex-col">
           <h2
@@ -38,7 +44,7 @@ const Faqs = ({ faqs }) => {
               key={faq?._key || index}
               className="bg-white/5 cursor-pointer rounded-xl p-5 w-full text-start"
             >
-              <div className="w-full text-left text-lg flex justify-between items-start leading-5">
+              <div className="w-full text-left text-lg flex justify-between items-start leading-6">
                 <span>{faq?.title}</span>
                 <motion.span
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
@@ -70,7 +76,7 @@ const Faqs = ({ faqs }) => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

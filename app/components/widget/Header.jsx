@@ -51,7 +51,7 @@ const Header = ({ services }) => {
       <div
         className={`${
           scrolled
-            ? "max-w-[1000px] border bg-black/5 border-white/5 rounded-md backdrop-blur-lg"
+            ? "max-w-[1000px] border bg-black/5 border-white/5 rounded-full backdrop-blur-lg"
             : "max-w-[1440px]"
         } w-full flex justify-between items-center transition-all px-5 duration-500 py-2 border-transparent border`}
       >

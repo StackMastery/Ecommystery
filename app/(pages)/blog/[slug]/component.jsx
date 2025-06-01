@@ -5,6 +5,11 @@ import CodeBlock from "../_components/codeBlock";
 import ProcessGroup from "../_components/blocks/ProcessGroup";
 import ServiceData from "../_components/blocks/ServiceData";
 import Faqs from "../_components/blocks/Faqs";
+import ContentBlock from "../_components/blocks/ContentBlock";
+import TitleDes from "../_components/blocks/TitleDes";
+import { motion } from "framer-motion";
+import ContentBlock2 from "../_components/blocks/ContentBlock2";
+import Pricing from "../_components/blocks/Pricing";
 
 export const componentsSanity = {
   block: {
@@ -129,6 +134,52 @@ export const componentsSanity = {
     },
     faqs: ({ value }) => {
       return <Faqs faqs={value} />;
+    },
+    contentBlock: ({ value }) => {
+      return <ContentBlock data={value} />;
+    },
+    titleDes: ({ value }) => {
+      return <TitleDes value={value} />;
+    },
+    lineHeight: ({ value }) => {
+      return <div className="w-full flex" style={{ height: value.height }} />;
+    },
+    gradRedBlue: ({ value }) => {
+      const { color } = value;
+      return (
+        <div className="w-full flex justify-center">
+          <div
+            className={`max-w-[1440px] w-full flex  absolute translate-y-[520px] ${color === "redBlur" ? "justify-between" : "justify-center"}`}
+          >
+            {color === "redBlur" ? (
+              <>
+                <motion.span
+                  initial={{ scale: 0.3, translateY: -300, opacity: 0 }}
+                  animate={{ scale: 1, translateY: -80, opacity: 1 }}
+                  className="bg-[#41013cbb] w-[1200px] h-[700px] blur-[350px] flex -translate-x-40"
+                />
+                <motion.span
+                  initial={{ scale: 0.1, translateY: 200, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1, translateY: 10 }}
+                  className="bg-[#19177980] w-[900px] h-[700px] blur-[350px] "
+                />
+              </>
+            ) : (
+              <motion.span
+                initial={{ scale: 0.1, translateY: 200, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1, translateY: 10 }}
+                className="bg-[#4E1A91]/50 w-[1000px] h-[700px] blur-[350px] "
+              />
+            )}
+          </div>
+        </div>
+      );
+    },
+    contentBlok2: ({ value }) => {
+      return <ContentBlock2 data={value} />;
+    },
+    pricing: ({ value }) => {
+      return <Pricing data={value} />;
     },
   },
 };

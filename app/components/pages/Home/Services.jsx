@@ -20,7 +20,7 @@ const Services = async ({ length, titleDesShow = true, className = "" }) => {
 
   return (
     <>
-      <section className={`section  ${className}`}>
+      <section className={`section   ${className}`}>
         <div className="max-w-[1440px] w-full -mt-20 px-5">
           <ServicesClient titleDesShow={titleDesShow} />
           <ServicesClientDiv>

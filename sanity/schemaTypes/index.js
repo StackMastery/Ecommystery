@@ -1,7 +1,11 @@
+import contentBlock from "../schemas/blocks/contentBlock";
+import contentBlocks2 from "../schemas/blocks/contentBlocks2";
 import faqBlock from "../schemas/blocks/faqBlock";
+import pricingBlock from "../schemas/blocks/pricingBlock";
 import processGroup from "../schemas/blocks/processGroup";
 import serviceContent from "../schemas/blocks/serviceContent";
 import serviceData from "../schemas/blocks/serviceData";
+import titleDes from "../schemas/blocks/titleDes";
 import blog from "../schemas/blog";
 import blogCategory from "../schemas/blogCategory";
 import competencies from "../schemas/competencies";
@@ -27,5 +31,9 @@ export const schema = {
     reviews,
     marquee,
     faqBlock,
+    contentBlock,
+    titleDes,
+    contentBlocks2,
+    pricingBlock,
   ],
 };

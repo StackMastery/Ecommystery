@@ -1,10 +1,8 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { useParsedStyle, useSplitTitleParts } from "@/lib/utils";
 import { urlFor } from "@/sanity/lib/sanityImage";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -52,7 +50,7 @@ const ServiceData = ({ data }) => {
             {useSplitTitleParts(data.hDes)}
           </p>
         </div>
-        <div className="w-full flex justify-around absolute">
+        <div className="w-full flex justify-around absolute max-w-[1440px]">
           <motion.span
             initial={{ scale: 0.1, translateY: 200, opacity: 0 }}
             animate={{ scale: 1, opacity: 1, translateY: 10 }}
@@ -68,7 +66,7 @@ const ServiceData = ({ data }) => {
           <div className="w-full md:w-6/12 flex flex-col gap-5">
             <h3 className="text-3xl font-medium">{data.title}</h3>
             <p className="text-sm font-light">{data.des}</p>
-            <ol className="pb-5 list-disc ml-5">
+            <ol className="pb-5 list-disc translate-x-5">
               {data.list.map((item, index) => (
                 <li
                   key={item._key}

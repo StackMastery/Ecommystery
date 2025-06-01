@@ -8,6 +8,7 @@ import Services from "@/app/components/pages/Home/Services";
 import { ServicePopularHeadingAndDes } from "../ServiceClient";
 import { SeeAllServices } from "@/app/components/pages/Home/ServicesClient";
 import Reviews from "@/app/components/pages/Home/Reviews";
+import NewsLetter from "@/app/components/pages/Home/NewsLetter";
 
 const ServiceDetailsPage = async ({ params }) => {
   const { slug } = params;
@@ -17,11 +18,11 @@ const ServiceDetailsPage = async ({ params }) => {
     <>
       <ServiceDetailsHero data={service} />
       <BrandMarquee />
-      <About className="pt-40">
-        <ServiceAbout />
-      </About>
       <ServiceContent value={service.content} />
       <Reviews />
+      <About className="pb-10">
+        <ServiceAbout />
+      </About>
       <div className="mb-10 flex justify-center flex-col items-center relative  ">
         <ServicePopularHeadingAndDes />
         <div className="pt-20">
@@ -29,6 +30,7 @@ const ServiceDetailsPage = async ({ params }) => {
         </div>
         <SeeAllServices />
       </div>
+      <NewsLetter className="-mt-24 pb-20" />
     </>
   );
 };

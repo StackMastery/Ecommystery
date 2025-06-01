@@ -61,6 +61,13 @@ const ServiceDetailsHero = ({ data }) => {
               className="bg-[#721A917D] w-[400px] h-[400px] blur-[150px] z-10"
             />
           </div>
+          <div className="max-w-[1440px] w-full flex justify-center absolute translate-y-[600px]">
+            <motion.span
+              initial={{ scale: 0.1, translateY: 200, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1, translateY: 10 }}
+              className="bg-[#161577] w-[800px] h-[500px] blur-[250px] "
+            />
+          </div>
         </div>
       </section>
     </>

@@ -32,7 +32,7 @@ const About = ({ children, className = "" }) => {
                 in E-Commerce
               </span>{" "}
             </h2>
-            <p className="text-sm md:text-lg lg:w-10/12">
+            <p className="text-sm md:text-lg lg:w-10/12 text-white/70">
               We’re more than a service—we’re your growth partner. At 200+
               startup, we build fully automated, profit-driven e-commerce stores
               that make success simple for entrepreneurs and busy professionals.

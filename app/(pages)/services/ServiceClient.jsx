@@ -85,7 +85,7 @@ export const ServicePopularHeadingAndDes = () => {
           stiffness: 300,
           damping: 20,
         }}
-        className="w-full  flex flex-col items-center"
+        className="w-full  flex flex-col relative z-20 items-center"
       >
         <h2
           style={{
