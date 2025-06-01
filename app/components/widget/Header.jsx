@@ -57,7 +57,7 @@ const Header = ({ services }) => {
       >
         <Link
           href="/"
-          className="overflow-hidden transition-[width] duration-500 ease-in-out w-52 max-[365px]:w-10"
+          className="overflow-hidden transition-[width] duration-500 ease-in-out w-56 max-[365px]:w-10"
         >
           <Logo />
         </Link>

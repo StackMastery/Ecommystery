@@ -18,7 +18,7 @@ export default function GradientText({
   };
 
   return (
-    <div className={`animated-gradient-text ${className}`}>
+    <div className={`animated-gradient-text !rounded-full ${className}`}>
       {showBorder && (
         <div
           className={`gradient-overlay ${overLayClass}`}
