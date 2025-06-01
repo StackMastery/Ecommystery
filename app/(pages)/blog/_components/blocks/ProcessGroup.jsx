@@ -62,7 +62,9 @@ const ProcessGroup = ({ value }) => {
             })}
           </h2>
           {value?.des && (
-            <p className="text-center my-5 text-lg">{value.des}</p>
+            <p className="text-center my-5 text-lg max-w-[700px]">
+              {value.des}
+            </p>
           )}
         </motion.div>
         <div

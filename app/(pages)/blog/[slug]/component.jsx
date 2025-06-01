@@ -14,14 +14,16 @@ import Pricing from "../_components/blocks/Pricing";
 export const componentsSanity = {
   block: {
     normal: ({ children }) => (
-      <p className="text-base my-4 z-40 relative text-current/70">{children}</p>
+      <p className="text-base my-4 z-40 relative text-current/70 serviceC">
+        {children}
+      </p>
     ),
     h2: ({ children }) => {
       return (
         <h2
           head-name={children[0]}
           id={toHtmlId(children[0])}
-          className="text-2xl contentHeading w-fit font-bold z-40 relative mt-8 mb-4 scroll-m-40"
+          className="text-2xl contentHeading w-fit font-bold z-40 relative mt-8 mb-4 scroll-m-40 serviceC"
         >
           {children}
         </h2>
@@ -34,7 +36,7 @@ export const componentsSanity = {
       return (
         <div
           id={toHtmlId(text)}
-          className="text-2xl font-bold mt-8 z-40 relative mb-4"
+          className="text-2xl font-bold mt-8 z-40 relative mb-4 serviceC"
         ></div>
       );
     },
@@ -44,7 +46,7 @@ export const componentsSanity = {
         <h3
           head-name={children[0]}
           id={toHtmlId(children[0])}
-          className="text-xl contentHeading scroll-m-40 font-semibold mt-6 mb-3 z-40 relative"
+          className="text-xl contentHeading serviceC scroll-m-40 font-semibold mt-6 mb-3 z-40 relative"
         >
           {children}{" "}
         </h3>
@@ -53,10 +55,10 @@ export const componentsSanity = {
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="list-disc ml-6 space-y-1">{children}</ul>
+      <ul className="list-disc ml-6 space-y-1 serviceC">{children}</ul>
     ),
     number: ({ children }) => (
-      <ol className="list-decimal ml-6 space-y-1 ">{children}</ol>
+      <ol className="list-decimal ml-6 space-y-1 serviceC">{children}</ol>
     ),
   },
   listItem: {
@@ -75,7 +77,7 @@ export const componentsSanity = {
         href={value?.href || "#"}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-blue-600 underline hover:text-blue-800"
+        className="text-blue-600 underline serviceC hover:text-blue-800"
       >
         {children}
       </Link>

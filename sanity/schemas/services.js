@@ -9,7 +9,7 @@ export default {
       type: "string",
       validation: (Rule) =>
         Rule.required()
-          .max(60)
+          .max(120)
           .warning("Recommended under 60 characters for SEO."),
     },
     {
@@ -35,7 +35,7 @@ export default {
       type: "text",
       validation: (Rule) =>
         Rule.required()
-          .max(160)
+          .max(260)
           .warning("Recommended under 160 characters for SEO."),
     },
     {
@@ -79,7 +79,7 @@ export default {
       name: "sTitle",
       title: "Service Title",
       type: "string",
-      validation: (Rule) => Rule.required().max(60),
+      validation: (Rule) => Rule.required().max(120),
     },
     {
       name: "sDes",

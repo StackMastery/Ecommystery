@@ -16,10 +16,16 @@ const ServiceDetailsPage = async ({ params }) => {
 
   return (
     <>
+      <style>{`
+        .serviceC {
+          max-width: 700px;
+          width: 100%
+        }
+      `}</style>
       <ServiceDetailsHero data={service} />
       <BrandMarquee />
       <div className="w-full  flex items-center justify-center">
-        <main className="max-w-[1440px]">
+        <main className="max-w-[1440px] flex items-center text-start flex-col">
           <ServiceContent value={service.content} />
         </main>
       </div>
