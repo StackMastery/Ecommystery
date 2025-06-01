@@ -31,9 +31,9 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html className="scroll-smooth" lang="en">
+    <html className="scroll-smooth" lang="en" data-arp="">
       <body
-        data-new-gr-c-s-check-loaded="14.1235.0"
+        data-new-gr-c-s-check-loaded="14.1237.0"
         data-gr-ext-installed=""
         className={`bg-bodyBg relative overflow-x-hidden text-white [&::-webkit-scrollbar]:w-0 ${plusJakarta.className} antialiased`}
       >

@@ -1,6 +1,7 @@
 import Services from "@/app/components/pages/Home/Services";
 import ServicesClientPage from "./ServiceClient";
 import { fetchSEOBySlug } from "@/controllers/frontend/seo.controller";
+import BrandMarquee from "@/app/components/pages/Home/BrandMarquee";
 
 export async function generateMetadata() {
   const seo = await fetchSEOBySlug("services");
@@ -10,7 +11,7 @@ export async function generateMetadata() {
 const ServicesPage = () => {
   return (
     <>
-      <ServicesClientPage>
+      <ServicesClientPage marquee={<BrandMarquee gred={false} />}>
         <Services titleDesShow={false} />
       </ServicesClientPage>
     </>

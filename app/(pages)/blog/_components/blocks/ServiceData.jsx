@@ -24,7 +24,7 @@ const ServiceData = ({ data }) => {
       }}
       className="section z-50 relative"
     >
-      <div className="w-full max-w-[1240px] flex flex-col items-center px-5 pb-20">
+      <div className="w-full max-w-[1440px] flex flex-col items-center px-5 pb-20">
         <div className="w-full flex flex-col items-center gap-5 justify-center">
           <h2
             className="text-4xl text-center gap-1 font-serif italic"
@@ -68,21 +68,16 @@ const ServiceData = ({ data }) => {
           <div className="w-full md:w-6/12 flex flex-col gap-5">
             <h3 className="text-3xl font-medium">{data.title}</h3>
             <p className="text-sm font-light">{data.des}</p>
-            <ul className="py-5">
+            <ol className="pb-5 list-disc ml-5">
               {data.list.map((item, index) => (
-                <React.Fragment key={item._key}>
-                  <li className="text-sm font-light cursor-pointer flex gap-2 items-center">
-                    {item.title}
-                  </li>
-                  {index !== data.list?.length - 1 && (
-                    <div className="border-b border-white/10 my-3 w-full" />
-                  )}
-                </React.Fragment>
+                <li
+                  key={item._key}
+                  className="text-sm font-light text-white/80 cursor-pointer  my-4 gap-2 items-center"
+                >
+                  {item.title}
+                </li>
               ))}
-            </ul>
-            <Link href={"/contact"}>
-              <Button>Contact</Button>
-            </Link>
+            </ol>
           </div>
           <div className="w-full md:w-6/12 relative max-[768px]:h-[500px] flex rounded-2xl overflow-hidden">
             <Image

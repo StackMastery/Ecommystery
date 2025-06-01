@@ -1,4 +1,12 @@
-import { BookOpen, Hotel, List, Search, Settings, Star } from "lucide-react";
+import {
+  BookOpen,
+  Hotel,
+  List,
+  Search,
+  Settings,
+  Sliders,
+  Star,
+} from "lucide-react";
 import { FaParagraph } from "react-icons/fa6";
 import { MdGroup, MdAssignment } from "react-icons/md";
 
@@ -74,4 +82,9 @@ export const structure = (S) =>
         .title("Reviews")
         .icon(Star)
         .child(S.documentTypeList("review").title("Reviews")),
+
+      S.listItem()
+        .title("Marquee")
+        .icon(Sliders)
+        .child(S.documentTypeList("marquee").title("Maruquee")),
     ]);

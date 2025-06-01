@@ -4,6 +4,7 @@ import Image from "next/image";
 import CodeBlock from "../_components/codeBlock";
 import ProcessGroup from "../_components/blocks/ProcessGroup";
 import ServiceData from "../_components/blocks/ServiceData";
+import Faqs from "../_components/blocks/Faqs";
 
 export const componentsSanity = {
   block: {
@@ -125,6 +126,9 @@ export const componentsSanity = {
 
     serviceData: ({ value }) => {
       return <ServiceData data={value} />;
+    },
+    faqs: ({ value }) => {
+      return <Faqs faqs={value} />;
     },
   },
 };

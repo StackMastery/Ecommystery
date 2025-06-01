@@ -3,11 +3,10 @@
 import { motion } from "framer-motion";
 import { gredTextClass } from "@/app/components/pages/Home/Hero";
 import { Button } from "@/components/ui/button";
-import BrandMarquee from "@/app/components/pages/Home/BrandMarquee";
 import Link from "next/link";
 import NewsLetter from "@/app/components/pages/Home/NewsLetter";
 
-const ServicesClientPage = ({ children }) => {
+const ServicesClientPage = ({ marquee, children }) => {
   return (
     <>
       <section className="section z-50 relative">
@@ -52,9 +51,7 @@ const ServicesClientPage = ({ children }) => {
         </div>
       </section>
       {children}
-      <div className="py-20 pt-20 relative !z-50">
-        <BrandMarquee gred={false} />
-      </div>
+      <div className="py-20 pt-20 relative !z-50">{marquee}</div>
       <div className="pb-20 flex flex-col items-center">
         <NewsLetter />
         <div className="max-w-[1440px] w-full flex justify-between absolute">

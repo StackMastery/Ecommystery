@@ -13,3 +13,13 @@ export const competenciesData = async () => {
   const data = await client.fetch(query, {}, { next: { revalidate: 10 } });
   return data;
 };
+
+export async function getMarqueeData() {
+  const query = `*[_type == "marquee"]{
+    title,
+    images
+  }`;
+
+  const data = await client.fetch(query);
+  return data;
+}

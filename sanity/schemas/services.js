@@ -85,7 +85,7 @@ export default {
       name: "sDes",
       title: "Service Description",
       type: "text",
-      validation: (Rule) => Rule.required().max(160),
+      validation: (Rule) => Rule.required().max(260),
     },
     {
       name: "sThumb",

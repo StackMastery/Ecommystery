@@ -7,6 +7,12 @@ export default {
   type: "object",
   fields: [
     {
+      name: "title",
+      title: "Title",
+      type: "text",
+      validation: (Rule) => Rule.required().max(250),
+    },
+    {
       name: "steps",
       title: "Steps",
       type: "array",
@@ -14,13 +20,6 @@ export default {
         {
           type: "object",
           fields: [
-            {
-              name: "icon",
-              title: "Icon",
-              type: "image",
-              options: { hotspot: true },
-              validation: (Rule) => Rule.required(),
-            },
             {
               name: "title",
               title: "Title",

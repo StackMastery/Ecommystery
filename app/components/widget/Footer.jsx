@@ -5,6 +5,8 @@ import Logo from "../ui/Logo";
 import { HeaderData } from "@/lib/data/HeaderData";
 import NewsletterSubscribe from "../ui/NewsletterSubscribe";
 import { usePathname } from "next/navigation";
+import GradientText from "@/components/TextAnimations/GradientText/GradientText";
+import { ArrowUpRight } from "lucide-react";
 
 const Footer = () => {
   const pathName = usePathname();
@@ -63,7 +65,22 @@ const Footer = () => {
                   Service
                 </span>
               </h2>
-              <NewsletterSubscribe className={"max-[500px]:w-full"} />
+              <Link href={"/contact"} className="flex mt-5 w-fit">
+                <GradientText
+                  showBorder
+                  className="py-3 group"
+                  animationSpeed={3}
+                  colors={["#DE22FF", "#FFE11B"]}
+                >
+                  <span className="text-white px-5 flex items-center  gap-1 font-light">
+                    Contact Us{" "}
+                    <ArrowUpRight
+                      className="group-hover:rotate-45 transition-all"
+                      strokeWidth={1.2}
+                    />
+                  </span>
+                </GradientText>
+              </Link>
             </div>
           </div>
           <div className="w-full flex justify-end absolute max-w-[1440px] -z-0">

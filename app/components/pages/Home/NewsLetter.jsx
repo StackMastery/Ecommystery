@@ -7,6 +7,9 @@ import M4 from "../../../../public/members/4.png";
 import M5 from "../../../../public/members/5.png";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { ArrowUpRight } from "lucide-react";
+import { scroolToTheHeading } from "@/app/(pages)/blog/_components/BlogConent";
+import Link from "next/link";
 const members = [M1, M2, M3, M4, M5];
 const colors = ["#FFF6D5", "#EBF5E0", "#DBF3F1", "#C7DEF8", "#E8D1E4"];
 
@@ -77,20 +80,14 @@ const NewsLetter = () => {
             </span>
             sellers boosting profits by 67% in 90 days.
           </h2>
-          <form
-            className={`flex flex-col sm:flex-row items-center w-full sm:max-w-[500px] sm:rounded-full overflow-hidden gap-2 sm:gap-0 sm:h-12`}
+          <Link
+            href={`/contact`}
+            className="flex max-w-[300px] w-full justify-center"
           >
-            <input
-              type="email"
-              placeholder="Ex: info@yourmail.com"
-              className=" outline-0 h-12 py-[10px] bg-white rounded-full sm:rounded-r-none w-full px-5 placeholder:text-[#2C2731] placeholder:text-sm text-sm placeholder:font-medium text-[#2C2731]"
-            />
-            <Button
-              className={`w-full sm:max-w-[190px] flex justify-center sm:rounded-l-none !h-14`}
-            >
-              Get free QUOTE
+            <Button className={` w-full h-[50px]`}>
+              Book a Call <ArrowUpRight />
             </Button>
-          </form>
+          </Link>
         </motion.div>
       </section>
     </>

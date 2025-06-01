@@ -102,7 +102,7 @@ const Header = ({ services }) => {
                           <Link
                             key={`servieces-${index}`}
                             className="flex gap-3 group col-span-4 items-center"
-                            href={"/services"}
+                            href={`/services/${childNav.slug.current}`}
                           >
                             <span
                               style={{ backgroundImage: childNav.iGrad }}
@@ -229,7 +229,7 @@ const Header = ({ services }) => {
                               <Link
                                 key={`servieces-${index}`}
                                 className="flex gap-3 group items-center"
-                                href={"/services"}
+                                href={`/services/${childNav.slug.current}`}
                               >
                                 <span
                                   style={{ backgroundImage: childNav.iGrad }}

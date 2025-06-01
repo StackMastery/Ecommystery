@@ -26,7 +26,7 @@ export const Input = forwardRef(
           defaultValue={defaultValue}
           className={`bg-white/5 text-lg placeholder:text-[#767577] w-full outline-none px-5 ${
             inputType === "textarea"
-              ? "!rounded-2xl py-3 min-h-[120px] resize-none"
+              ? "!rounded-2xl py-3 min-h-[120px] "
               : "rounded-full py-3"
           } ${className}`}
           ref={ref}
