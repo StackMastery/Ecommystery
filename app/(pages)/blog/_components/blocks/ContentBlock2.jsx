@@ -6,9 +6,11 @@ const ContentBlock2 = ({ data }) => {
     <section className="section py-20">
       <div className="flex flex-col lg:flex-row w-full max-w-[1440px] mx-auto px-5 gap-10">
         <div className="w-full lg:w-4/12 space-y-10">
-          <h3 className="text-xl sm:text-4xl md:text-5xl lg:text-3xl text-white">
-            {data.heading}
-          </h3>
+          {data?.features?.length > 4 && (
+            <h3 className="text-xl sm:text-4xl md:text-5xl lg:text-3xl text-white">
+              {data.heading}
+            </h3>
+          )}
           <Image
             width={500}
             height={500}
@@ -18,9 +20,14 @@ const ContentBlock2 = ({ data }) => {
           />
         </div>
 
-        <div className="w-full lg:w-7/12 grid grid-cols-1 sm:grid-cols-2 gap-10 ">
+        <div className="w-full lg:w-7/12 h-fit grid grid-cols-12 gap-10 ">
+          {data?.features?.length <= 4 && (
+            <h3 className="text-xl sm:text-4xl md:text-5xl pb-5 col-span-12 lg:text-3xl text-white">
+              {data.heading}
+            </h3>
+          )}
           {data?.features?.map((fe, index) => (
-            <div key={fe?._key} className="space-y-3">
+            <div key={fe?._key} className="space-y-3 col-span-12 sm:col-span-6">
               <h4 className="text-2xl text-white">{fe?.title}</h4>
               <p className="text-sm text-white/70">{fe?.description}</p>
             </div>

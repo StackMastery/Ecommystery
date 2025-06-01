@@ -84,10 +84,18 @@ const Pricing = ({ data }) => {
                 </div>
                 <Link className="w-full mt-10" href={"/contact"}>
                   <button
-                    className={`w-full px-5 py-3 bg-white/20 cursor-pointer rounded-full uppercase hover:bg-pM transition-all duration-300 text-lg`}
+                    className={`w-full relative bg-white/20 overflow-hidden font-semibold group cursor-pointer rounded-full uppercase  transition-all duration-300 text-lg`}
                     variant={""}
                   >
-                    Contact US
+                    <span
+                      style={{
+                        background: `linear-gradient(91deg, #226FFF -5.68%, #DE22FF 54.52%, #FFE11B 114.72%)`,
+                      }}
+                      className={`flex absolute opacity-0 group-hover:opacity-100 inset-0  transition-all`}
+                    />
+                    <span className="px-5 z-50 relative py-3 flex justify-center text-center w-full">
+                      Contact US
+                    </span>
                   </button>
                 </Link>
               </div>

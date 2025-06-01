@@ -18,7 +18,11 @@ const ServiceDetailsPage = async ({ params }) => {
     <>
       <ServiceDetailsHero data={service} />
       <BrandMarquee />
-      <ServiceContent value={service.content} />
+      <div className="w-full  flex items-center justify-center">
+        <main className="max-w-[1440px]">
+          <ServiceContent value={service.content} />
+        </main>
+      </div>
       <Reviews />
       <About className="pb-10">
         <ServiceAbout />

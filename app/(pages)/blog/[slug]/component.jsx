@@ -14,14 +14,14 @@ import Pricing from "../_components/blocks/Pricing";
 export const componentsSanity = {
   block: {
     normal: ({ children }) => (
-      <p className="text-base my-4 text-current/70">{children}</p>
+      <p className="text-base my-4 z-40 relative text-current/70">{children}</p>
     ),
     h2: ({ children }) => {
       return (
         <h2
           head-name={children[0]}
           id={toHtmlId(children[0])}
-          className="text-2xl contentHeading w-fit font-bold mt-8 mb-4 scroll-m-40"
+          className="text-2xl contentHeading w-fit font-bold z-40 relative mt-8 mb-4 scroll-m-40"
         >
           {children}
         </h2>
@@ -32,7 +32,10 @@ export const componentsSanity = {
         ? children.map((child) => child?.text || child).join("")
         : children.toString();
       return (
-        <div id={toHtmlId(text)} className="text-2xl font-bold mt-8 mb-4"></div>
+        <div
+          id={toHtmlId(text)}
+          className="text-2xl font-bold mt-8 z-40 relative mb-4"
+        ></div>
       );
     },
 
@@ -41,7 +44,7 @@ export const componentsSanity = {
         <h3
           head-name={children[0]}
           id={toHtmlId(children[0])}
-          className="text-xl contentHeading scroll-m-40 font-semibold mt-6 mb-3"
+          className="text-xl contentHeading scroll-m-40 font-semibold mt-6 mb-3 z-40 relative"
         >
           {children}{" "}
         </h3>

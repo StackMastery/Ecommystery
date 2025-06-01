@@ -13,6 +13,37 @@ export default {
       validation: (Rule) => Rule.required().max(250),
     },
     {
+      name: "des",
+      title: "Description",
+      type: "text",
+    },
+    {
+      name: "label",
+      title: "Show Label",
+      type: "boolean",
+      initialValue: true,
+    },
+    {
+      name: "position",
+      title: "Position",
+      type: "string",
+      options: {
+        list: [
+          { title: "Start", value: "start" },
+          { title: "Center", value: "center" },
+          { title: "End", value: "end" },
+        ],
+        layout: "dropdown",
+      },
+    },
+
+    {
+      name: "isBgShow",
+      title: "Bg Show",
+      type: "boolean",
+      initialValue: false,
+    },
+    {
       name: "steps",
       title: "Steps",
       type: "array",
@@ -26,11 +57,20 @@ export default {
               type: "string",
               validation: (Rule) => Rule.required().max(160),
             },
+
             {
               name: "description",
               title: "Description",
               type: "text",
               validation: (Rule) => Rule.required().max(500),
+            },
+            {
+              name: "icon",
+              title: "Icon Image",
+              type: "image",
+              options: {
+                hotspot: true,
+              },
             },
           ],
           preview: {
@@ -40,7 +80,7 @@ export default {
             },
             prepare({ title, media }) {
               return {
-                title: title,
+                title,
                 media,
               };
             },
@@ -55,7 +95,7 @@ export default {
     },
     prepare({ title }) {
       return {
-        title: `Procees List Items ${title?.length}` || "Process Group",
+        title: `Process List Items ${title?.length}` || "Process Group",
       };
     },
   },
