@@ -9,10 +9,16 @@ import { ServicePopularHeadingAndDes } from "../ServiceClient";
 import { SeeAllServices } from "@/app/components/pages/Home/ServicesClient";
 import Reviews from "@/app/components/pages/Home/Reviews";
 import NewsLetter from "@/app/components/pages/Home/NewsLetter";
+import NotFound from "@/app/not-found";
 
 const ServiceDetailsPage = async ({ params }) => {
   const { slug } = params;
+
   const service = await getServiceDataBySlug(slug);
+
+  if (!service?.content) {
+    return <NotFound />;
+  }
 
   return (
     <>
