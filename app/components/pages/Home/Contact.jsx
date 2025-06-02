@@ -30,8 +30,7 @@ const Contact = () => {
   useEffect(() => {
     client
       .fetch(`*[_type == "service"]{ title, "slug": slug.current }`)
-      .then((data) => setServices(data))
-      .catch((err) => console.error("Sanity fetch error:", err));
+      .then((data) => setServices(data));
   }, []);
 
   const handleSubmit = (e) => {

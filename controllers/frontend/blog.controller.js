@@ -32,7 +32,6 @@ export const getAllCategories = async () => {
     );
     return categories;
   } catch (err) {
-    console.error("Error fetching categories:", err);
     return null;
   }
 };

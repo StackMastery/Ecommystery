@@ -250,7 +250,7 @@ const Header = ({ services }) => {
                                   </span>
                                 </span>
                                 <div>
-                                  <h4 className="text-[#B3B3B3] text-[8px]">
+                                  <h4 className="text-[#B3B3B3] text-[8px]">  
                                     {childNav.type.title}
                                   </h4>
                                   <h2

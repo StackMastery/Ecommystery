@@ -28,7 +28,6 @@ export async function getServiceDataBySlug(slug) {
     );
     return data || null; // if no data, return null instead of undefined
   } catch (error) {
-    console.error("Sanity fetch error:", error);
     return null;
   }
 }

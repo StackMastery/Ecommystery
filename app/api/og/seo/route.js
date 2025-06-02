@@ -18,7 +18,6 @@ async function loadGoogleFont(font, text) {
 
     throw new Error(`Failed to load font: ${font}`);
   } catch (error) {
-    console.error(error);
     throw new Error("Error loading Google Font.");
   }
 }
@@ -177,7 +176,6 @@ export async function GET(req) {
       }
     );
   } catch (error) {
-    console.error("Error generating the image:", error);
     return new Response("Internal Server Error", { status: 500 });
   }
 }

@@ -12,7 +12,6 @@ const Pricing = ({ data }) => {
   const extractedStyle = useParsedStyle(data.heading);
   const parts = useSplitTitleParts(data.heading);
 
-  console.log(data);
   return (
     <>
       <motion.section

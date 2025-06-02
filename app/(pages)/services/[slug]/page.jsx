@@ -10,6 +10,30 @@ import { SeeAllServices } from "@/app/components/pages/Home/ServicesClient";
 import Reviews from "@/app/components/pages/Home/Reviews";
 import NewsLetter from "@/app/components/pages/Home/NewsLetter";
 import NotFound from "@/app/not-found";
+import { urlFor } from "@/sanity/lib/sanityImage";
+
+export const generateMetadata = async ({ params }) => {
+  const service = await getServiceDataBySlug(params?.slug);
+  console.log(service);
+  return {
+    title: service?.sTitle || service?.title,
+    description: service?.description || "",
+    openGraph: {
+      title: service?.sTitle || service?.title,
+      description: service?.description || "",
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}/services/${params?.slug}`,
+      images: [
+        {
+          url: urlFor(service?.sThumb?.asset).width(800).height(600).url(),
+          width: 800,
+          height: 600,
+          alt: service?.sTitle || service?.title,
+        },
+      ],
+      siteName: process.env.NEXT_PUBLIC_SITE_NAME,
+    },
+  };
+};
 
 const ServiceDetailsPage = async ({ params }) => {
   const { slug } = params;
