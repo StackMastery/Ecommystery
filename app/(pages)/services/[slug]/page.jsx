@@ -31,7 +31,7 @@ const ServiceDetailsPage = async ({ params }) => {
       <ServiceDetailsHero data={service} />
       <BrandMarquee />
       <div className="w-full  flex items-center justify-center">
-        <main className="max-w-[1440px] flex items-center text-start flex-col">
+        <main className="max-w-[1440px] px-5 flex items-center text-start flex-col">
           <ServiceContent value={service.content} />
         </main>
       </div>

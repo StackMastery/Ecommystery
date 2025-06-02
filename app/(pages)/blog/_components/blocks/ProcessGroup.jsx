@@ -39,28 +39,30 @@ const ProcessGroup = ({ value }) => {
           whileInView="visible"
           className="w-full relative z-10 flex items-center flex-col"
         >
-          <h2
-            className="text-4xl md:text-5xl text-center gap-1 font-serif italic"
-            style={extractedStyle}
-          >
-            {parts.map((part, index) => {
-              if (part.startsWith("[") && part.endsWith("]")) {
-                const cleanText = part.slice(1, -1);
-                return (
-                  <span
-                    key={index}
-                    style={{
-                      backgroundImage: `linear-gradient(90deg, #226FFF -23.52%, #DE22FF 42.16%, #FFE11B 107.84%)`,
-                    }}
-                    className="text-transparent pl-1  pb-1 font-semibold bg-clip-text font-familyN not-italic"
-                  >
-                    {cleanText}
-                  </span>
-                );
-              }
-              return <span key={index}>{part}</span>;
-            })}
-          </h2>
+          {value?.title?.length > 0 && (
+            <h2
+              className="text-4xl md:text-5xl text-center gap-1 font-serif italic"
+              style={extractedStyle}
+            >
+              {parts.map((part, index) => {
+                if (part.startsWith("[") && part.endsWith("]")) {
+                  const cleanText = part.slice(1, -1);
+                  return (
+                    <span
+                      key={index}
+                      style={{
+                        backgroundImage: `linear-gradient(90deg, #226FFF -23.52%, #DE22FF 42.16%, #FFE11B 107.84%)`,
+                      }}
+                      className="text-transparent pl-1  pb-1 font-semibold bg-clip-text font-familyN not-italic"
+                    >
+                      {cleanText}
+                    </span>
+                  );
+                }
+                return <span key={index}>{part}</span>;
+              })}
+            </h2>
+          )}
           {value?.des && (
             <p className="text-center my-5 text-lg max-w-[700px]">
               {value.des}
@@ -68,13 +70,13 @@ const ProcessGroup = ({ value }) => {
           )}
         </motion.div>
         <div
-          className={`grid grid-cols-12 pt-8 ${value?.isBgShow ? "gap-5" : "gap-10"}`}
+          className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 pt-8 ${value?.isBgShow ? "gap-5" : "gap-10"}`}
         >
           {value.steps.map((step, index) => {
             console.log(step);
             return (
               <motion.div
-                className={`col-span-12 cursor-text sm:col-span-6 md:col-span-4 lg:col-span-3  flex flex-col h-full rounded-2xl relative !z-50 transition-all hover:-translate-y-2 duration-500 ${value?.isBgShow && "bg-white/5 p-6"} ${value?.position === "start" ? "" : value?.position === "center" ? "items-center text-center" : "items-end text-end"}`}
+                className={`cursor-text flex flex-col h-full rounded-2xl relative !z-50 transition-all hover:-translate-y-2 duration-500 ${value?.isBgShow && "bg-white/5 p-6"} ${value?.position === "start" ? "" : value?.position === "center" ? "items-center text-center" : "items-end text-end"}`}
                 key={step._key}
                 variants={fadeInUpVariant}
                 initial="hidden"
