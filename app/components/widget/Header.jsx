@@ -115,7 +115,7 @@ const Header = ({ services }) => {
                                 <Image
                                   width={30}
                                   height={30}
-                                  src={urlFor(childNav.image).url()}
+                                  src={urlFor(childNav.image).width(30).url()}
                                   alt={childNav.title}
                                 />
                               </span>
@@ -233,7 +233,7 @@ const Header = ({ services }) => {
                               >
                                 <span
                                   style={{ backgroundImage: childNav.iGrad }}
-                                  className="flex rounded-full overflow-hidden bg-white/50"
+                                  className="flex rounded-full h-8 w-20 overflow-hidden bg-white/50"
                                 >
                                   <span
                                     style={{ background: childNav.iGrad }}
@@ -242,7 +242,9 @@ const Header = ({ services }) => {
                                     <Image
                                       width={20}
                                       height={20}
-                                      src={urlFor(childNav.image).url()}
+                                      src={urlFor(childNav.image)
+                                        .width(20)
+                                        .url()}
                                       alt={childNav.title}
                                     />
                                   </span>
