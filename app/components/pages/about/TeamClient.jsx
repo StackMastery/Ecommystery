@@ -50,11 +50,6 @@ export const TeamMemberCard = ({ m }) => {
           ratio={4 / 4}
         >
           <Image
-            src={TeamBg}
-            alt={"Team Member BG"}
-            className=" absolute h-full -translate-x-10"
-          />
-          <Image
             width={500}
             height={500}
             className="z-20 relative mt-5 pl-5 transition-all teamHover"
@@ -67,17 +62,6 @@ export const TeamMemberCard = ({ m }) => {
             {m.hobby}
           </h4>
         </div>
-      </div>
-      <div className="pt-5">
-        <div className="flex items-center w-full justify-between">
-          <h3 className="text-xl md:text-2xl uppercase">{m.name[0]}</h3>
-          <Link href={m?.linkedIn}>
-            <FaLinkedin size={30} color="#0a66c2" />
-          </Link>
-        </div>
-        <h6 className="font-serif italic text-5xl md:text-6xl pt-1 font-extralight">
-          {m.name[1]}
-        </h6>
       </div>
     </div>
   );

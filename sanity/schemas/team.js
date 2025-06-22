@@ -10,12 +10,6 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "LinkedIn Profile URL",
-      name: "linkedIn",
-      type: "url",
-      validation: (Rule) => Rule.required().uri({ scheme: ["http", "https"] }),
-    },
-    {
       name: "hobby",
       title: "Hobby",
       type: "string",

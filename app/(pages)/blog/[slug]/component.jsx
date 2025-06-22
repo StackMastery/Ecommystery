@@ -21,7 +21,7 @@ export const componentsSanity = {
     h2: ({ children }) => {
       return (
         <h2
-          head-name={children[0]}
+          head-name={toHtmlId(children[0])}
           id={toHtmlId(children[0])}
           className="text-2xl contentHeading w-fit font-bold z-40 relative mt-8 mb-4 scroll-m-40 serviceC"
         >
