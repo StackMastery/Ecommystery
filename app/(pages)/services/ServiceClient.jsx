@@ -14,18 +14,18 @@ const ServicesClientPage = ({ marquee, children }) => {
           <div className="max-w-[1440px] w-full flex justify-between absolute top-20">
             <motion.span
               initial={{ scale: 0.3, translateY: -300, opacity: 0 }}
-              whileInView={{ scale: 1, translateY: -80, opacity: 1 }}
+              animate={{ scale: 1, translateY: -80, opacity: 1 }}
               className="bg-[#721A917D] w-[400px] h-[500px]  blur-[150px] flex"
             />
             <motion.span
               initial={{ scale: 0.1, translateY: 200, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1, translateY: 10 }}
+              animate={{ scale: 1, opacity: 1, translateY: 10 }}
               className="bg-[#721A917D] w-[400px] h-[400px] blur-[150px] z-10"
             />
           </div>
           <motion.div
             initial={{ opacity: 0, y: 80 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{
               duration: 0.8,
               ease: [0.25, 0.1, 0.25, 1],
@@ -57,12 +57,12 @@ const ServicesClientPage = ({ marquee, children }) => {
         <div className="max-w-[1440px] w-full flex justify-between absolute">
           <motion.span
             initial={{ scale: 0.3, translateY: -300, opacity: 0 }}
-            whileInView={{ scale: 1, translateY: -80, opacity: 1 }}
+            animate={{ scale: 1, translateY: -80, opacity: 1 }}
             className="bg-[#41013C] w-[500px] h-[700px] mt-20  blur-[200px] flex"
           />
           <motion.span
             initial={{ scale: 0.3, translateY: -300, opacity: 0 }}
-            whileInView={{ scale: 1, translateY: -80, opacity: 1 }}
+            animate={{ scale: 1, translateY: -80, opacity: 1 }}
             className="bg-[#0e0141] w-[500px] h-[700px] mt-20  blur-[200px] flex"
           />
         </div>
@@ -78,7 +78,7 @@ export const ServicePopularHeadingAndDes = () => {
     <>
       <motion.div
         initial={{ opacity: 0, filter: "blur(10px)", y: 50 }}
-        whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+        animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
         transition={{
           type: "tween",
           duration: 0.8,

@@ -10,7 +10,7 @@ const ServicesClient = ({ showButton = false, titleDesShow }) => {
       {titleDesShow && (
         <motion.div
           initial={{ opacity: 0, filter: "blur(10px)", y: 50 }}
-          whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+          animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
           className="w-full relative !z-40"
           transition={{
             type: "tween",
@@ -31,7 +31,7 @@ const ServicesClient = ({ showButton = false, titleDesShow }) => {
       <div className="flex justify-center w-full">
         <motion.span
           initial={{ scale: 0.1, translateY: 200, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1, translateY: 10 }}
+          animate={{ scale: 1, opacity: 1, translateY: 10 }}
           className="bg-[#1615779E] absolute flex w-[1200px] -mt-40 h-[1200px] blur-[300px] z-10"
         />
       </div>
@@ -46,7 +46,7 @@ export const SeeAllServices = () => {
     <>
       <motion.div
         initial={{ opacity: 0, filter: "blur(10px)", y: 50 }}
-        whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+        animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
         className="w-full relative !z-40 pb-40 p-5 pt-10 flex justify-center"
         transition={{
           type: "tween",
@@ -82,7 +82,7 @@ export const ServicesClientDiv = ({ children }) => {
     <>
       <motion.div
         initial={{ opacity: 0, filter: "blur(10px)", y: 50 }}
-        whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+        animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
         transition={{
           type: "tween",
           duration: 0.8,
@@ -102,7 +102,7 @@ export const ReviewsBackground = () => {
     <>
       <motion.span
         initial={{ scale: 0.1, translateY: 200, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1, translateY: 10 }}
+        animate={{ scale: 1, opacity: 1, translateY: 10 }}
         className="bg-[#4E1A91]/50 absolute flex w-[1200px]  h-[1200px] blur-[300px] z-10"
       />
     </>

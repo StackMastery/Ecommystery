@@ -55,7 +55,7 @@ const CompetenciesClient = ({ children }) => {
     <motion.div
       variants={containerVariants}
       initial="hidden"
-      whileInView="show"
+      animate="show"
       viewport={{ once: true, amount: 0.3 }}
       className="max-w-[1240px] w-full px-5 pb-20"
     >

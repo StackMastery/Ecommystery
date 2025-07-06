@@ -24,7 +24,7 @@ const TeamClient = ({ children }) => {
       </div>
       <motion.div
         initial={{ y: 100, opacity: 0, filter: "blur(10px)" }}
-        whileInView={{ y: 0, opacity: 100, filter: "blur(0px)" }}
+        animate={{ y: 0, opacity: 100, filter: "blur(0px)" }}
         transition={{
           type: "tween",
           duration: 0.8, // ← duration increases by index

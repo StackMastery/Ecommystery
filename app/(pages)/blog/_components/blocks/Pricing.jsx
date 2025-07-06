@@ -17,7 +17,7 @@ const Pricing = ({ data }) => {
       <motion.section
         variants={fadeInUpVariant}
         initial="hidden"
-        whileInView="visible"
+        animate="visible"
         className="section py-20"
       >
         <div className="max-w-[1440px] w-full flex flex-col items-center px-5">

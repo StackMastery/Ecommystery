@@ -46,7 +46,7 @@ const Contact = () => {
     <section className="section relative !z-[9999] scroll-m-20" id="contact">
       <motion.div
         initial={{ y: 100, opacity: 0, filter: "blur(10px)" }}
-        whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+        animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
         transition={{
           type: "tween",
           duration: 0.8,
@@ -68,12 +68,14 @@ const Contact = () => {
             <li>
               <h2 className="text-xl font-medium text-white">Email</h2>
               <p className="text-neutral-300 text-[18px]">
-                <Link href="mailto:info@wppop.com">info@wppop.com</Link>
+                <Link href="mailto:support@ecommystery.com">
+                  support@ecommystery.com
+                </Link>
               </p>
             </li>
             <li>
               <h2 className="text-xl font-medium text-white">Phone</h2>
-              <p className="text-neutral-300 text-[18px]">+13029669508</p>
+              <p className="text-neutral-300 text-[18px]">+18302093991</p>
             </li>
           </ul>
           <div className="w-full flex justify-end !overflow-hidden">

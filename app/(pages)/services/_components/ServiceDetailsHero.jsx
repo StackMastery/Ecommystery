@@ -16,7 +16,7 @@ const ServiceDetailsHero = ({ data }) => {
           <div className="w-full flex flex-col gap-10 text-center items-center relative !z-[999]">
             <motion.div
               initial={{ translateY: 100, opacity: 0, filter: "blur(10px)" }}
-              whileInView={{ translateY: 0, opacity: 1, filter: "blur(0px)" }}
+              animate={{ translateY: 0, opacity: 1, filter: "blur(0px)" }}
               transition={{
                 type: "tween",
                 duration: 0.8,
@@ -52,12 +52,12 @@ const ServiceDetailsHero = ({ data }) => {
           <div className="max-w-[1440px] w-full flex justify-between absolute">
             <motion.span
               initial={{ scale: 0.3, translateY: -300, opacity: 0 }}
-              whileInView={{ scale: 1, translateY: -80, opacity: 1 }}
+              animate={{ scale: 1, translateY: -80, opacity: 1 }}
               className="bg-[#721A917D] w-[400px] h-[500px]  blur-[150px] flex"
             />
             <motion.span
               initial={{ scale: 0.1, translateY: 200, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1, translateY: 10 }}
+              animate={{ scale: 1, opacity: 1, translateY: 10 }}
               className="bg-[#721A917D] w-[400px] h-[400px] blur-[150px] z-10"
             />
           </div>

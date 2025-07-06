@@ -34,7 +34,7 @@ const TitleDes = ({ value }) => {
         <motion.div
           variants={fadeInUpVariant}
           initial="hidden"
-          whileInView="visible"
+          animate="visible"
           className="w-full relative z-10 flex items-center flex-col"
         >
           <h2

@@ -14,7 +14,7 @@ const Video = () => {
       <section className="section relative !z-50 py-20 pb-40">
         <motion.div
           initial={{ y: 100, opacity: 0, filter: "blur(10px)" }}
-          whileInView={{ y: 0, opacity: 100, filter: "blur(0px)" }}
+          animate={{ y: 0, opacity: 100, filter: "blur(0px)" }}
           transition={{
             type: "tween",
             duration: 0.8,

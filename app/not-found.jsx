@@ -12,7 +12,7 @@ const NotFound = () => {
         <div className="w-full flex flex-col items-center text-center px-5 justify-center h-screen">
           <motion.span
             initial={{ scale: 0.1, translateY: 200, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1, translateY: 10 }}
+            animate={{ scale: 1, opacity: 1, translateY: 10 }}
             className="bg-[#721A917D] w-[600px] absolute h-[600px] blur-[150px] z-10"
           />
           <div className="relative z-10">

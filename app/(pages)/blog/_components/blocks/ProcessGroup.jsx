@@ -36,7 +36,7 @@ const ProcessGroup = ({ value }) => {
         <motion.div
           variants={fadeInUpVariant}
           initial="hidden"
-          whileInView="visible"
+          animate="visible"
           className="w-full relative z-10 flex items-center flex-col"
         >
           {value?.title?.length > 0 && (
@@ -80,7 +80,7 @@ const ProcessGroup = ({ value }) => {
                 key={step._key}
                 variants={fadeInUpVariant}
                 initial="hidden"
-                whileInView="visible"
+                animate="visible"
                 custom={index}
               >
                 {value?.label && (

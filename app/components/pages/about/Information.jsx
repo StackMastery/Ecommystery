@@ -10,13 +10,13 @@ const Information = () => {
           <div className="flex justify-center w-full">
             <motion.span
               initial={{ scale: 0.1, translateY: 200, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1, translateY: 10 }}
+              animate={{ scale: 1, opacity: 1, translateY: 10 }}
               className="bg-[#1615779E] absolute flex w-[600px] mt-20 h-[700px] blur-[150px] z-10"
             />
           </div>
           <motion.div
             initial={{ y: 100, opacity: 0, filter: "blur(10px)" }}
-            whileInView={{ y: 0, opacity: 100, filter: "blur(0px)" }}
+            animate={{ y: 0, opacity: 100, filter: "blur(0px)" }}
             transition={{
               type: "tween",
               duration: 0.4,

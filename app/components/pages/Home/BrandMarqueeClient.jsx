@@ -9,7 +9,7 @@ const BrandMarqueeClient = ({ data }) => {
   return (
     <motion.section
       initial={{ opacity: 0, filter: "blur(10px)", y: 150 }}
-      whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+      animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
       transition={{
         type: "tween",
         duration: 0.8,

@@ -13,7 +13,7 @@ const ContentBlock = ({ data }) => {
       <motion.section
         variants={fadeInUpVariant}
         initial="hidden"
-        whileInView="visible"
+        animate="visible"
         className="section pt-10 pb-40"
       >
         <div

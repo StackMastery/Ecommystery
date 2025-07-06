@@ -18,7 +18,7 @@ const ContactPageClient = () => {
         <div className="flex justify-center px-10 flex-col pt-52  items-center w-full max-w-[1440px]">
           <motion.div
             initial={{ opacity: 0, y: 80 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{
               duration: 0.8,
               ease: [0.25, 0.1, 0.25, 1],
@@ -28,7 +28,7 @@ const ContactPageClient = () => {
             <div className="mb-6 w-full flex justify-center items-center flex-col gap-2">
               <motion.div
                 initial={{ translateY: -50, opacity: 0 }}
-                whileInView={{ translateY: 0, opacity: 100 }}
+                animate={{ translateY: 0, opacity: 100 }}
                 transition={{
                   delay: 0.6,
                   duration: 0.4,
@@ -39,7 +39,7 @@ const ContactPageClient = () => {
                   <div className="flex items-center -space-x-2 max-[450px]:scale-90">
                     <motion.span
                       initial={{ scale: 0 }}
-                      whileInView={{ scale: 0.9 }}
+                      animate={{ scale: 0.9 }}
                       transition={{
                         delay: 1,
                         duration: 0.4,
@@ -51,7 +51,7 @@ const ContactPageClient = () => {
                     </motion.span>
                     <motion.span
                       initial={{ translateX: -24, opacity: 0 }}
-                      whileInView={{ translateX: 0, opacity: 100 }}
+                      animate={{ translateX: 0, opacity: 100 }}
                       transition={{
                         delay: 1.4,
                         duration: 0.4,
@@ -110,7 +110,7 @@ const ContactPageClient = () => {
           <div className="max-w-[1440px] w-full flex justify-center absolute">
             <motion.span
               initial={{ scale: 0.3, translateY: -300, opacity: 0 }}
-              whileInView={{ scale: 1, translateY: -80, opacity: 1 }}
+              animate={{ scale: 1, translateY: -80, opacity: 1 }}
               className="bg-[#721A917D] w-[600px] h-[700px] mt-56  blur-[200px] flex"
             />
           </div>
