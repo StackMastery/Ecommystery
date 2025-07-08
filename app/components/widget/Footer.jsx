@@ -31,11 +31,7 @@ const Footer = () => {
                   className="hover:text-current/100 text-current/80 cursor-pointer transition-all"
                   key={`quick-links-${index}`}
                 >
-                  {!nav.childrens ? (
-                    <Link href={nav.path}>{nav.element}</Link>
-                  ) : (
-                    <>{nav.element}</>
-                  )}
+                  <Link href={nav.path}>{nav.element}</Link>
                 </li>
               ))}
             </ul>
@@ -299,15 +295,11 @@ export default Footer;
 
 const Socials = [
   {
-    path: "/",
+    path: "/contact",
     element: "Get a Quote",
   },
   {
-    path: "/x",
-    element: "Our team",
-  },
-  {
-    path: "/facebook",
+    path: "/contact",
     element: "Contact Us",
   },
 ];

@@ -250,7 +250,7 @@ const Header = ({ services }) => {
                                   </span>
                                 </span>
                                 <div>
-                                  <h4 className="text-[#B3B3B3] text-[8px]">  
+                                  <h4 className="text-[#B3B3B3] text-[8px]">
                                     {childNav.type.title}
                                   </h4>
                                   <h2
@@ -310,7 +310,10 @@ const HeaderBtns = () => {
           size={20}
         />
       </Link>
-      <Link href={"/contact"}>
+      <Link
+        target="_blank"
+        href={"https://calendly.com/ecommystery/ecommerce-consultant"}
+      >
         <Button className={`flex-grow justify-center min-[575px]:flex-grow-0`}>
           Book A Call
         </Button>

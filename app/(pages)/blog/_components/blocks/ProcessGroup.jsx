@@ -73,7 +73,6 @@ const ProcessGroup = ({ value }) => {
           className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 pt-8 ${value?.isBgShow ? "gap-5" : "gap-10"}`}
         >
           {value.steps.map((step, index) => {
-            console.log(step);
             return (
               <motion.div
                 className={`cursor-text flex flex-col h-full rounded-2xl relative !z-50 transition-all hover:-translate-y-2 duration-500 ${value?.isBgShow && "bg-white/5 p-6"} ${value?.position === "start" ? "" : value?.position === "center" ? "items-center text-center" : "items-end text-end"}`}

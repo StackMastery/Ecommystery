@@ -9,10 +9,13 @@ const HeaderServer = async () => {
     image,
     iGrad,
     "imageUrl": image.asset->url,
-    type->{title}
+    type->{title},
+    order
     }`;
 
-  const services = await client.fetch(baseQuery);
+  const servicesRes = await client.fetch(baseQuery);
+
+  const services = servicesRes.sort((a, b) => a.order - b.order);
 
   return (
     <>

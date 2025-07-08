@@ -121,27 +121,27 @@ export default AboutHero;
 export const Socials = [
   {
     name: "LinkedIn",
-    link: "linkedin.com",
+    link: "https://www.linkedin.com/company/ecommystery/",
     icon: FaLinkedin,
   },
-  {
-    name: "X",
-    link: "x.com",
-    icon: FaXTwitter,
-  },
+  // {
+  //   name: "X",
+  //   link: "x.com",
+  //   icon: FaXTwitter,
+  // },
   {
     name: "Facebook",
-    link: "facebook.com",
+    link: "https://www.facebook.com/ecommystery1",
     icon: FaFacebook,
   },
-  {
-    name: "Youtube",
-    link: "youtube.com",
-    icon: FaYoutube,
-  },
+  // {
+  //   name: "Youtube",
+  //   link: "youtube.com",
+  //   icon: FaYoutube,
+  // },
   {
     name: "Instagram",
-    link: "instagram.com",
+    link: "https://www.instagram.com/ecommystery/",
     icon: FaInstagram,
   },
 ];

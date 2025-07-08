@@ -11,12 +11,15 @@ const Services = async ({ length, titleDesShow = true, className = "" }) => {
   cGrad,
   iGrad,
   "imageUrl": image.asset->url,
+  order,
   type->{_id, title}
 }`;
 
   const query = length ? `${baseQuery}[0...${length}]` : baseQuery;
 
-  const services = await client.fetch(query);
+  const servicesRe = await client.fetch(query);
+
+  const services = servicesRe.sort((a, b) => a.order - b.order);
 
   return (
     <>

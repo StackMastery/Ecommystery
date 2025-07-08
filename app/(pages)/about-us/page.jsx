@@ -16,7 +16,7 @@ const AboutPage = () => {
       <AboutHero />
       <Information />
       <Video />
-      <Team />
+      {/* <Team /> */}
       <Competencies />
     </>
   );

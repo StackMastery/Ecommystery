@@ -14,7 +14,6 @@ import { urlFor } from "@/sanity/lib/sanityImage";
 
 export const generateMetadata = async ({ params }) => {
   const service = await getServiceDataBySlug(params?.slug);
-  console.log(service);
   return {
     title: service?.sTitle || service?.title,
     description: service?.description || "",

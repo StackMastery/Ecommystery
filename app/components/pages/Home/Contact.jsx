@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { sendEmail } from "@/controllers/frontend/sendmail.controller";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -33,13 +34,35 @@ const Contact = () => {
       .then((data) => setServices(data));
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     const finalData = {
       ...formData,
       budget: formData.budget === "custom" ? customBudget : formData.budget,
     };
-    console.log("Form Data Object:", finalData);
+
+    const res = await sendEmail({
+      to: finalData?.email,
+      subject: `Ecommystery new contact from ${finalData?.name}`,
+      html: `
+      <div style="font-family: Arial, sans-serif; padding: 20px; color: #333;">
+        <h2 style="color: #0a0a0a;">New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${finalData.name}</p>
+        <p><strong>Email:</strong> ${finalData.email}</p>
+        <p><strong>Service Interested In:</strong> ${finalData.service}</p>
+        <p><strong>Budget:</strong> ${finalData.budget}</p>
+        <p><strong>Project Details:</strong></p>
+        <p style="white-space: pre-wrap;">${finalData.details}</p>
+        <hr style="margin: 20px 0;" />
+        <p style="font-size: 14px; color: #666;">
+          This email was automatically generated from the contact form on Ecommystery.
+        </p>
+      </div>
+    `,
+    });
+
+    console.log(res);
   };
 
   return (
@@ -121,6 +144,7 @@ const Contact = () => {
           <Input
             placeholder="Ex: info@yourmail.com"
             label="Your Email"
+            type="email"
             value={formData.email}
             onChange={(e) =>
               setFormData({ ...formData, email: e.target.value })
