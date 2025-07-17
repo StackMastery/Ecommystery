@@ -1,6 +1,7 @@
 import {
   BookOpen,
   Hotel,
+  Layers,
   List,
   Search,
   Settings,
@@ -87,4 +88,9 @@ export const structure = (S) =>
         .title("Marquee")
         .icon(Sliders)
         .child(S.documentTypeList("marquee").title("Maruquee")),
+
+      S.listItem()
+        .title("Pages")
+        .icon(Layers)
+        .child(S.documentTypeList("page").title("Pages")),
     ]);

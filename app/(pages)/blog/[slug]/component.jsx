@@ -10,6 +10,7 @@ import TitleDes from "../_components/blocks/TitleDes";
 import { motion } from "framer-motion";
 import ContentBlock2 from "../_components/blocks/ContentBlock2";
 import Pricing from "../_components/blocks/Pricing";
+import Link from "next/link";
 
 export const componentsSanity = {
   block: {

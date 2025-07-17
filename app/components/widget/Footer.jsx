@@ -302,4 +302,12 @@ const Socials = [
     path: "/contact",
     element: "Contact Us",
   },
+  {
+    path: "/terms-and-condition",
+    element: "Terms and Condition",
+  },
+  {
+    path: "/privacy-policy",
+    element: "Privacy Policy ",
+  },
 ];

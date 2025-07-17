@@ -10,6 +10,7 @@ import blog from "../schemas/blog";
 import blogCategory from "../schemas/blogCategory";
 import competencies from "../schemas/competencies";
 import marquee from "../schemas/marquee";
+import page from "../schemas/page";
 import reviews from "../schemas/reviews";
 import seo from "../schemas/seo";
 import services from "../schemas/services";
@@ -35,5 +36,6 @@ export const schema = {
     titleDes,
     contentBlocks2,
     pricingBlock,
+    page,
   ],
 };

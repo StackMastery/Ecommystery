@@ -233,7 +233,7 @@ const Header = ({ services }) => {
                               >
                                 <span
                                   style={{ backgroundImage: childNav.iGrad }}
-                                  className="flex rounded-full h-8 w-20 overflow-hidden bg-white/50"
+                                  className="flex rounded-full h-8  overflow-hidden bg-white/50"
                                 >
                                   <span
                                     style={{ background: childNav.iGrad }}
@@ -295,21 +295,6 @@ export default Header;
 const HeaderBtns = () => {
   return (
     <>
-      <Link
-        className="bg-[#30AF5F] whatsappBtn transition-all group flex w-10 h-10 items-center justify-center p-2 rounded-full"
-        target="_blank"
-        href={`https://wa.me/8801714114459`}
-      >
-        <MdOutlineWhatsapp
-          className=" group-hover:opacity-0 transition-all"
-          size={20}
-        />
-        <ArrowUpRight
-          className=" opacity-0 group-hover:opacity-100 delay-100 ease-in transition-all absolute"
-          strokeWidth={1.5}
-          size={20}
-        />
-      </Link>
       <Link
         target="_blank"
         href={"https://calendly.com/ecommystery/ecommerce-consultant"}
